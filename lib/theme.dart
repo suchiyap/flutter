@@ -36,9 +36,9 @@ InputDecorationTheme inputDecorationTheme() {
 
 TextTheme textTheme() {
   return const TextTheme(
-    bodyLarge: TextStyle(color: kTextColor),
-    bodyMedium: TextStyle(color: kSubTextColor),
-  );
+      bodyLarge: TextStyle(color: kTextColor),
+      bodyMedium: TextStyle(color: kTextColor),
+      bodySmall: TextStyle(color: kTextColor));
 }
 
 AppBarTheme appBarTheme() {

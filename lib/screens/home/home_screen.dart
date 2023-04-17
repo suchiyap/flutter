@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      const Product(),
+      const SliverPadding(padding: EdgeInsets.all(10.0), sliver: Product()),
     ])
         // ]),
 
