@@ -52,8 +52,8 @@ class _NavBarState extends State<NavBar> {
         ),
         BottomNavigationBarItem(
           icon: Container(
-            padding: const EdgeInsets.only(
-                left: 30.0, right: 30, top: 10, bottom: 10),
+            width: 80,
+            padding: const EdgeInsets.only(top: 10, bottom: 10),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(72),
               gradient: kPrimaryGradientColor,
