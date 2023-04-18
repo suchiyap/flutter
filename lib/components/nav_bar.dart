@@ -24,6 +24,8 @@ class _NavBarState extends State<NavBar> {
       type: BottomNavigationBarType.fixed,
       selectedFontSize: 12.0,
       unselectedFontSize: 12.0,
+      showUnselectedLabels: false,
+      showSelectedLabels: false,
       backgroundColor: Colors.white,
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
