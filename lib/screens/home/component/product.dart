@@ -78,22 +78,21 @@ class _ProductState extends State<Product> {
                   bottom: 10,
                   left: 10,
                   child: SizedBox(
-                      width: (SizeConfig.screenWidth ?? 500 - 135) / 2,
-                      child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                SvgPicture.asset('assets/icons/Rating.svg'),
-                                SvgPicture.asset('assets/icons/Rating.svg'),
-                                SvgPicture.asset('assets/icons/Rating.svg'),
-                                SvgPicture.asset('assets/icons/Rating.svg'),
-                                SvgPicture.asset('assets/icons/Rating.svg')
-                              ],
-                            ),
-                            SvgPicture.asset('assets/icons/Love.svg')
-                          ])))
+                    child: Row(
+                      children: [
+                        SvgPicture.asset('assets/icons/Rating.svg'),
+                        SvgPicture.asset('assets/icons/Rating.svg'),
+                        SvgPicture.asset('assets/icons/Rating.svg'),
+                        SvgPicture.asset('assets/icons/Rating.svg'),
+                        SvgPicture.asset('assets/icons/Rating.svg')
+                      ],
+                    ),
+                  )),
+              Positioned(
+                  bottom: 10,
+                  right: 10,
+                  child: SizedBox(
+                      child: SvgPicture.asset('assets/icons/Love.svg')))
             ]))
         .toList();
 

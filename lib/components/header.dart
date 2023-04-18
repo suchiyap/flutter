@@ -21,10 +21,11 @@ class _HeaderState extends State<Header> {
             gradient: kPrimaryGradientColor),
       ),
       // title of appbar
-      title: Text(
+      title: Center(
+          child: Text(
         widget.title,
         style: headingStyle,
-      ),
+      )),
     );
     //   return Expanded(
     //       child: SizedBox(

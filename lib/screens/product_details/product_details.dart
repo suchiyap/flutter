@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:temple_dev/constants.dart';
-import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 
 class ProductDetails extends StatefulWidget {
   static String routeName = "/product-details";
@@ -171,37 +170,37 @@ class _ProductDetailsState extends State<ProductDetails> {
                               ]),
                         ),
                         // Image.asset('assets/images/product/Product 1.png'),
-                        Container(
-                            height: 1100,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.white,
-                            ),
-                            padding: const EdgeInsets.all(10),
-                            child: Column(children: [
-                              Image.asset('assets/images/product/Detail 1.png'),
-                              const Flexible(
-                                  child: HtmlWidget(
-                                """<p>清明节配套 拜祖先配套 清明配套 清明祭品 扫墓配套 </p>
-<p>注意！注意！注意！每一份配套都包括封条和路票 </p>
-<p>配套包括： </p>
-<p>小衣箱 *1个 </p>
-<p>祖先衣 *2件 </p>
-<p>鞋子 *1双 </p>
-<p>往生钱 *1包 </p>
-<p>开路钱 *1条 </p>
-<p>五百万 *1包 </p>
-<p>满面祖先金 *3片 </p>
-<p>1000亿冥币 *1包 </p>
-<p>往生功德金 *1包 </p>
-<p>1000万冥币 *3包 </p>
-<p>小金砖 *2包 </p>
-<p>小银砖 *2包 </p>
-<p>金盾 *5包 </p>
-<p>银盾 *5包
-  </p>""",
-                              ))
-                            ])),
+//                         Container(
+//                             height: 1100,
+//                             decoration: BoxDecoration(
+//                               borderRadius: BorderRadius.circular(10),
+//                               color: Colors.white,
+//                             ),
+//                             padding: const EdgeInsets.all(10),
+//                             child: Column(children: [
+//                               Image.asset('assets/images/product/Detail 1.png'),
+//                               const Flexible(
+//                                   child: HtmlWidget(
+//                                 """<p>清明节配套 拜祖先配套 清明配套 清明祭品 扫墓配套 </p>
+// <p>注意！注意！注意！每一份配套都包括封条和路票 </p>
+// <p>配套包括： </p>
+// <p>小衣箱 *1个 </p>
+// <p>祖先衣 *2件 </p>
+// <p>鞋子 *1双 </p>
+// <p>往生钱 *1包 </p>
+// <p>开路钱 *1条 </p>
+// <p>五百万 *1包 </p>
+// <p>满面祖先金 *3片 </p>
+// <p>1000亿冥币 *1包 </p>
+// <p>往生功德金 *1包 </p>
+// <p>1000万冥币 *3包 </p>
+// <p>小金砖 *2包 </p>
+// <p>小银砖 *2包 </p>
+// <p>金盾 *5包 </p>
+// <p>银盾 *5包
+//   </p>""",
+//                               ))
+//                             ])),
                       ]))
                 ],
               )
@@ -211,6 +210,37 @@ class _ProductDetailsState extends State<ProductDetails> {
           ),
         ),
       ]),
+      // bottomNavigationBar: BottomNavigationBar(
+      //     backgroundColor: Colors.white,
+      //     fixedColor: kTextColor,
+      //     items: <BottomNavigationBarItem>[
+      //       BottomNavigationBarItem(
+      //         icon: SvgPicture.asset(
+      //           "assets/icons/Cart.svg",
+      //           colorFilter:
+      //               const ColorFilter.mode(kPrimaryColor, BlendMode.srcIn),
+      //         ),
+      //         activeIcon: SvgPicture.asset(
+      //           "assets/icons/Cart.svg",
+      //           colorFilter:
+      //               const ColorFilter.mode(kPrimaryColor, BlendMode.srcIn),
+      //         ),
+      //         label: '购物车',
+      //       ),
+      //       BottomNavigationBarItem(
+      //         icon: SvgPicture.asset(
+      //           "assets/icons/Home.svg",
+      //           colorFilter:
+      //               const ColorFilter.mode(kPrimaryColor, BlendMode.srcIn),
+      //         ),
+      //         activeIcon: SvgPicture.asset(
+      //           "assets/icons/Home.svg",
+      //           colorFilter:
+      //               const ColorFilter.mode(kPrimaryColor, BlendMode.srcIn),
+      //         ),
+      //         label: '',
+      //       )
+      //     ]),
     );
   }
 }
