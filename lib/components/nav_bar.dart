@@ -62,14 +62,6 @@ class _NavBarState extends State<NavBar> {
                   const ColorFilter.mode(Colors.white, BlendMode.srcIn),
             ),
           ),
-          // SvgPicture.asset(
-          //   "assets/icons/Cart.svg",
-          //   colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
-          // ),
-          // activeIcon: SvgPicture.asset(
-          //   "assets/icons/Cart.svg",
-          //   colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
-          // ),
           label: '',
         ),
         BottomNavigationBarItem(

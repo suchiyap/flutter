@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:temple_dev/screens/main/main.dart';
+import 'package:temple_dev/screens/product_details/product_details.dart';
 import 'package:temple_dev/screens/splash_screen/splash_screen.dart';
 
 // We use name route
@@ -7,4 +8,5 @@ import 'package:temple_dev/screens/splash_screen/splash_screen.dart';
 final Map<String, WidgetBuilder> routes = {
   SplashScreen.routeName: (context) => const SplashScreen(),
   MainScreen.routeName: (context) => const MainScreen(),
+  ProductDetails.routeName: (context) => const ProductDetails(),
 };

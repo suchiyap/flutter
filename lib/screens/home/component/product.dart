@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:temple_dev/screens/product_details/product_details.dart';
 import 'package:temple_dev/size_config.dart';
 
 class ProductList {
@@ -44,55 +45,58 @@ class Product extends StatefulWidget {
   State<Product> createState() => _ProductState();
 }
 
-final List<Widget> productListing = products
-    .map((prd) => Stack(children: [
-          Container(
-              padding: const EdgeInsets.all(8),
-              decoration: const BoxDecoration(
-                  color: Color(0xFFEFEFEF),
-                  borderRadius: BorderRadius.all(Radius.circular(5.0))),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Image.asset(prd.image),
-                  Container(
-                    padding: const EdgeInsets.only(top: 5),
-                    child: Text(
-                      prd.name,
-                    ),
-                  ),
-                  Text(
-                    prd.price,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ],
-              )),
-          Positioned(
-              bottom: 10,
-              left: 10,
-              child: SizedBox(
-                  width: (SizeConfig.screenWidth ?? 500 - 135) / 2,
-                  child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            SvgPicture.asset('assets/icons/Rating.svg'),
-                            SvgPicture.asset('assets/icons/Rating.svg'),
-                            SvgPicture.asset('assets/icons/Rating.svg'),
-                            SvgPicture.asset('assets/icons/Rating.svg'),
-                            SvgPicture.asset('assets/icons/Rating.svg')
-                          ],
-                        ),
-                        SvgPicture.asset('assets/icons/Love.svg')
-                      ])))
-        ]))
-    .toList();
-
 class _ProductState extends State<Product> {
   @override
   Widget build(BuildContext context) {
+    final List<Widget> productListing = products
+        .map((prd) => Stack(children: [
+              GestureDetector(
+                  onTap: () =>
+                      {Navigator.pushNamed(context, ProductDetails.routeName)},
+                  child: Container(
+                      padding: const EdgeInsets.all(8),
+                      decoration: const BoxDecoration(
+                          color: Color(0xFFEFEFEF),
+                          borderRadius: BorderRadius.all(Radius.circular(5.0))),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(prd.image),
+                          Container(
+                            padding: const EdgeInsets.only(top: 5),
+                            child: Text(
+                              prd.name,
+                            ),
+                          ),
+                          Text(
+                            prd.price,
+                            style: const TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ))),
+              Positioned(
+                  bottom: 10,
+                  left: 10,
+                  child: SizedBox(
+                      width: (SizeConfig.screenWidth ?? 500 - 135) / 2,
+                      child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                SvgPicture.asset('assets/icons/Rating.svg'),
+                                SvgPicture.asset('assets/icons/Rating.svg'),
+                                SvgPicture.asset('assets/icons/Rating.svg'),
+                                SvgPicture.asset('assets/icons/Rating.svg'),
+                                SvgPicture.asset('assets/icons/Rating.svg')
+                              ],
+                            ),
+                            SvgPicture.asset('assets/icons/Love.svg')
+                          ])))
+            ]))
+        .toList();
+
     return SliverGrid(
       gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
         maxCrossAxisExtent: (SizeConfig.screenWidth ?? 500 - 10) / 2,
