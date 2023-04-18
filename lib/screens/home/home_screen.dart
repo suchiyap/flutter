@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:temple_dev/components/header.dart';
-import 'package:temple_dev/components/product.dart';
+import 'package:temple_dev/screens/home/component/product.dart';
 import 'component/category.dart';
 import 'component/banner.dart';
 
