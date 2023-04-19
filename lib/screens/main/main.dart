@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:temple_dev/constants.dart';
 import 'package:temple_dev/components/nav_bar.dart';
 import 'package:temple_dev/screens/cart/cart.dart';
+import 'package:temple_dev/screens/profile/profile.dart';
 import 'package:temple_dev/screens/home/home_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -21,7 +22,7 @@ class _MainScreenState extends State<MainScreen> {
     const MyHomePage(title: '海南会東禪寺'),
     const Cart(),
     const MyHomePage(title: '海南会東禪寺'),
-    const MyHomePage(title: '海南会東禪寺'),
+    const Profile(),
   ];
 
   void _onItemTapped(int index) {
