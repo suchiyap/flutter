@@ -20,7 +20,7 @@ class _ProductContentState extends State<ProductContent> {
             children: [
               Container(
                   padding: const EdgeInsets.all(8),
-                  color: const Color(0xFFEFE9E9),
+                  color: kBackgroundColor,
                   child: Column(children: [
                     Container(
                       margin: const EdgeInsets.only(bottom: 10),
@@ -70,7 +70,7 @@ class _ProductContentState extends State<ProductContent> {
                                   ],
                                 ),
                                 SizedBox(
-                                  height: 38,
+                                  height: 40,
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
@@ -96,20 +96,21 @@ class _ProductContentState extends State<ProductContent> {
                                         children: [
                                           TextButton(
                                             style: TextButton.styleFrom(
-                                              padding: EdgeInsets.zero,
-                                              minimumSize: const Size(20,20),
-                                              tapTargetSize: MaterialTapTargetSize.shrinkWrap),
+                                                padding: EdgeInsets.zero,
+                                                minimumSize: const Size(20, 20),
+                                                tapTargetSize:
+                                                    MaterialTapTargetSize
+                                                        .shrinkWrap),
                                             onPressed: () {
                                               Share.share("https://google.com");
                                             },
                                             child: SvgPicture.asset(
-                                                  'assets/icons/Share.svg'), 
+                                                'assets/icons/Share.svg'),
                                           ),
                                           const Text('分享',
-                                            style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                            )
-                                          ),
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                              )),
                                         ],
                                       ),
                                     ],

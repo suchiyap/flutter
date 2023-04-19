@@ -32,6 +32,7 @@ const kButtonTextColor = Colors.white;
 const kRatingBarColor = Color(0xFFFFCA03);
 const kDisabledColor = Colors.grey;
 const kErrorColor = Colors.red;
+const kBackgroundColor = Color(0xFFEFE9E9);
 
 const kPrimaryBackgroundColor = Colors.white;
 

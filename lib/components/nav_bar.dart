@@ -3,21 +3,17 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:temple_dev/constants.dart';
 
 class NavBar extends StatefulWidget {
-  const NavBar({super.key});
+  const NavBar(
+      {super.key, required this.selectedIndex, required this.onItemTapped});
+
+  final int selectedIndex;
+  final Function(int) onItemTapped;
 
   @override
   State<NavBar> createState() => _NavBarState();
 }
 
 class _NavBarState extends State<NavBar> {
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
@@ -89,9 +85,9 @@ class _NavBarState extends State<NavBar> {
           label: '',
         ),
       ],
-      currentIndex: _selectedIndex,
+      currentIndex: widget.selectedIndex,
       selectedItemColor: kPrimaryColor,
-      onTap: _onItemTapped,
+      onTap: widget.onItemTapped,
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:temple_dev/constants.dart';
+import 'package:temple_dev/screens/cart/cart.dart';
 
 class CartNav extends StatefulWidget {
   const CartNav({super.key});
@@ -23,43 +24,45 @@ class _CartNavState extends State<CartNav> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             GestureDetector(
+                onTap: () => Navigator.pushNamed(context, Cart.routeName),
                 child: Stack(children: [
-              SizedBox(
-                width: 60,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SvgPicture.asset(
-                      'assets/icons/Cart.svg',
-                      colorFilter: const ColorFilter.mode(
-                          kPrimaryColor, BlendMode.srcIn),
-                      width: 30,
+                  SizedBox(
+                    width: 60,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(
+                          'assets/icons/Cart.svg',
+                          colorFilter: const ColorFilter.mode(
+                              kPrimaryColor, BlendMode.srcIn),
+                          width: 30,
+                        ),
+                        const Text(
+                          '购物车',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 12),
+                        ),
+                      ],
                     ),
-                    const Text(
-                      '购物车',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
-                    ),
-                  ],
-                ),
-              ),
-              Positioned(
-                  top: 0,
-                  right: 0,
-                  height: 22,
-                  child: Container(
-                    padding: const EdgeInsets.all(2),
-                    constraints: const BoxConstraints(minWidth: 22),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(50),
-                        border: Border.all(color: Colors.black, width: 2.0)),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: const [Center(child: Text('3'))]),
-                  ))
-            ])),
+                  ),
+                  Positioned(
+                      top: 0,
+                      right: 0,
+                      height: 22,
+                      child: Container(
+                        padding: const EdgeInsets.all(2),
+                        constraints: const BoxConstraints(minWidth: 22),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(50),
+                            border:
+                                Border.all(color: Colors.black, width: 2.0)),
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: const [Center(child: Text('3'))]),
+                      ))
+                ])),
             Row(
               children: [
                 GestureDetector(
