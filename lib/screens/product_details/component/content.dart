@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:temple_dev/constants.dart';
+import 'package:share_plus/share_plus.dart';
 
 class ProductContent extends StatefulWidget {
   const ProductContent({super.key});
@@ -93,12 +94,22 @@ class _ProductContentState extends State<ProductContent> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          SvgPicture.asset(
-                                              'assets/icons/Share.svg'),
+                                          TextButton(
+                                            style: TextButton.styleFrom(
+                                              padding: EdgeInsets.zero,
+                                              minimumSize: const Size(20,20),
+                                              tapTargetSize: MaterialTapTargetSize.shrinkWrap),
+                                            onPressed: () {
+                                              Share.share("https://google.com");
+                                            },
+                                            child: SvgPicture.asset(
+                                                  'assets/icons/Share.svg'), 
+                                          ),
                                           const Text('分享',
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                              ))
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                            )
+                                          ),
                                         ],
                                       ),
                                     ],
