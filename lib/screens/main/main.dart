@@ -31,7 +31,7 @@ class _MainScreenState extends State<MainScreen> {
                 },
               ),
               TextButton(
-                child: const Text('Yes'),
+                child: const Text('Yes', style: TextStyle(color: kPrimaryColor)),
                 onPressed: () {
                   Navigator.of(context).pop(true);
                 },
