@@ -7,6 +7,11 @@ const kPrimaryGradientColor = LinearGradient(
   end: Alignment.bottomRight,
   colors: [Color(0xFFFF5403), Color(0xFFF90716)],
 );
+const kSecondaryGradientColor = LinearGradient(
+  begin: Alignment.topCenter,
+  end: Alignment.bottomCenter,
+  colors: [Color(0xFFFFF323), Color(0xFFFFCA03)],
+);
 const kBackgroundGradientColor = LinearGradient(
   colors: [
     Color.fromRGBO(252, 0, 35, 0),
