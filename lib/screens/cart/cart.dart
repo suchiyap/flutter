@@ -67,7 +67,8 @@ class _CartState extends State<Cart> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                         backgroundColor: kPrimaryBackgroundColor,
-                        minimumSize: const Size(100, 50)),
+                        minimumSize:
+                            Size(MediaQuery.of(context).size.width * 0.2, 50)),
                     onPressed: () => {Navigator.pushNamed(context, '/')},
                     child: const Text(
                       '付款',
