@@ -23,7 +23,8 @@ class _CartListingState extends State<CartListing> {
   Widget build(BuildContext context) {
     return CheckboxListTile(
       activeColor: kTextColor,
-      contentPadding: const EdgeInsets.all(10),
+      contentPadding:
+          const EdgeInsets.only(top: 10, left: 0, bottom: 10, right: 10),
       value: _isSelected,
       onChanged: (newValue) {
         setState(() {
@@ -36,11 +37,12 @@ class _CartListingState extends State<CartListing> {
         child: Row(
           children: [
             Container(
+              width: MediaQuery.of(context).size.width * 0.25,
               padding: const EdgeInsets.only(right: 5),
               child: Image.asset(
                 'assets/images/product/Product 1.png',
-                width: 100,
-                height: 100,
+                // width: 100,
+                // height: 100,
               ),
             ),
             Expanded(

@@ -33,7 +33,7 @@ class _CartState extends State<Cart> {
       bottomNavigationBar: Container(
         width: double.infinity,
         decoration: const BoxDecoration(color: kPrimaryColor),
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+        padding: const EdgeInsets.only(left: 0, top: 10, right: 10, bottom: 10),
         child: ListTile(
           dense: true,
           iconColor: Colors.white,
