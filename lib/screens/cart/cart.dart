@@ -35,16 +35,27 @@ class _CartState extends State<Cart> {
         decoration: const BoxDecoration(color: kPrimaryColor),
         padding: const EdgeInsets.only(left: 0, top: 10, right: 10, bottom: 10),
         child: ListTile(
-          dense: true,
+          dense: false,
           iconColor: Colors.white,
           selectedColor: Colors.black,
           contentPadding: const EdgeInsets.all(0),
           title:
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-            const Text(
-              'All (3)',
-              style: TextStyle(color: Colors.white),
-            ),
+            Row(children: [
+              Radio(
+                value: _checkall,
+                groupValue: 'all',
+                onChanged: (value) => {
+                  setState(() {
+                    _checkall = !_checkall;
+                  })
+                },
+              ),
+              const Text(
+                'All (3)',
+                style: TextStyle(color: Colors.white),
+              ),
+            ]),
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
@@ -77,15 +88,6 @@ class _CartState extends State<Cart> {
               ],
             ),
           ]),
-          leading: Radio(
-            value: _checkall,
-            groupValue: 'all',
-            onChanged: (value) => {
-              setState(() {
-                _checkall = !_checkall;
-              })
-            },
-          ),
         ),
       ),
     );
