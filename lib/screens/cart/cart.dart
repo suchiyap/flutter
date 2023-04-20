@@ -22,12 +22,14 @@ class _CartState extends State<Cart> {
             '购物车',
             style: titleStyle,
           )),
-      body: Column(
-        children: const [
-          CartListing(checked: false),
-          CartListing(checked: false),
-        ],
-      ),
+      body: SizedBox(
+          width: double.infinity,
+          child: Column(
+            children: const [
+              CartListing(checked: false),
+              CartListing(checked: false),
+            ],
+          )),
       bottomNavigationBar: Container(
         width: double.infinity,
         decoration: const BoxDecoration(color: kPrimaryColor),

@@ -16,7 +16,7 @@ class _CartNavState extends State<CartNav> {
     return Container(
         height: 85,
         padding:
-            const EdgeInsets.only(left: 20, right: 20, bottom: 20, top: 10),
+            const EdgeInsets.only(left: 20, right: 20, bottom: 10, top: 10),
         width: double.infinity,
         decoration: const BoxDecoration(color: Colors.white),
         child: Row(
