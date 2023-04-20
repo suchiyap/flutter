@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:temple_dev/constants.dart';
+import 'package:badges/badges.dart' as badge; 
 
 class Profile extends StatefulWidget {
   static String routeName = "/profile-page";
@@ -102,7 +103,15 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Image.asset('assets/images/order/to_ship.jpeg', width: 25, height: 25),
+                                  badge.Badge(
+                                    badgeContent: const Text('20', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 10)),
+                                    badgeStyle: const badge.BadgeStyle(
+                                      badgeColor: kRatingBarColor,
+                                    ),
+                                    showBadge: true, // false
+                                    position: badge.BadgePosition.topEnd(end: -15),
+                                    child: Image.asset('assets/images/order/to_ship.jpeg', width: 25, height: 25),
+                                  ),
                                   const SizedBox(height: 2),
                                   const Text(
                                     '待发货',
@@ -115,7 +124,15 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Image.asset('assets/images/order/to_receive.jpeg', width: 25, height: 25),
+                                  badge.Badge(
+                                    badgeContent: const Text('10', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 10)),
+                                    badgeStyle: const badge.BadgeStyle(
+                                      badgeColor: kRatingBarColor,
+                                    ),
+                                    showBadge: true, // false
+                                    position: badge.BadgePosition.topEnd(end: -15),
+                                    child: Image.asset('assets/images/order/to_receive.jpeg', width: 25, height: 25),
+                                  ),
                                   const SizedBox(height: 2),
                                   const Text(
                                     '待收货',
@@ -128,7 +145,15 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Image.asset('assets/images/order/refund_return.jpeg', width: 25, height: 25),
+                                  badge.Badge(
+                                    badgeContent: const Text('15', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 10)),
+                                    badgeStyle: const badge.BadgeStyle(
+                                      badgeColor: kRatingBarColor,
+                                    ),
+                                    showBadge: false, // false
+                                    position: badge.BadgePosition.topEnd(end: -15),
+                                    child: Image.asset('assets/images/order/refund_return.jpeg', width: 25, height: 25),
+                                  ),
                                   const SizedBox(height: 2),
                                   const Text(
                                     '退款退货',
@@ -141,7 +166,15 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Image.asset('assets/images/order/all_order.jpeg', width: 25, height: 25),
+                                  badge.Badge(
+                                    // badgeContent: const Text('15', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 10)),
+                                    badgeStyle: const badge.BadgeStyle(
+                                      badgeColor: kRatingBarColor,
+                                    ),
+                                    showBadge: true, // false
+                                    position: badge.BadgePosition.topEnd(end: -15),
+                                    child: Image.asset('assets/images/order/all_order.jpeg', width: 25, height: 25),
+                                  ),
                                   const SizedBox(height: 2),
                                   const Text(
                                     '全部订单',
@@ -164,34 +197,49 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                       Card(
                         child: Column(
                           children: [
-                            const ListTile(
-                              leading: Icon(Icons.person),
-                              title: Text('个人资料', style: TextStyle(fontSize: 14)),
-                              trailing: Icon(Icons.arrow_forward_ios, size: 18),
+                            ListTile(
+                              leading: const Icon(Icons.person),
+                              title: const Text('个人资料', style: TextStyle(fontSize: 14)),
+                              trailing: const Icon(Icons.arrow_forward_ios, size: 18),
+                              onTap: () {
+                                //
+                              },
                             ),
                             const Divider(),
-                            const ListTile(
-                              leading: Icon(Icons.lock),
-                              title: Text('收货地址', style: TextStyle(fontSize: 14)),
-                              trailing: Icon(Icons.arrow_forward_ios, size: 18),
+                            ListTile(
+                              leading: const Icon(Icons.lock),
+                              title: const Text('收货地址', style: TextStyle(fontSize: 14)),
+                              trailing: const Icon(Icons.arrow_forward_ios, size: 18),
+                              onTap: () {
+                                //
+                              },
                             ),
                             const Divider(),
-                            const ListTile(
-                              leading: Icon(Icons.lock),
-                              title: Text('更换密码', style: TextStyle(fontSize: 14)),
-                              trailing: Icon(Icons.arrow_forward_ios, size: 18),
+                            ListTile(
+                              leading: const Icon(Icons.lock),
+                              title: const Text('更换密码', style: TextStyle(fontSize: 14)),
+                              trailing: const Icon(Icons.arrow_forward_ios, size: 18),
+                              onTap: () {
+                                //
+                              },
                             ),
                             const Divider(),
-                            const ListTile(
-                              leading: Icon(Icons.lock),
-                              title: Text('设置', style: TextStyle(fontSize: 14)),
-                              trailing: Icon(Icons.arrow_forward_ios, size: 18),
+                            ListTile(
+                              leading: const Icon(Icons.lock),
+                              title: const Text('设置', style: TextStyle(fontSize: 14)),
+                              trailing: const Icon(Icons.arrow_forward_ios, size: 18),
+                              onTap: () {
+                                //
+                              },
                             ),
                             const Divider(),
-                            const ListTile(
-                              leading: Icon(Icons.lock),
-                              title: Text('退出', style: TextStyle(fontSize: 14)),
-                              trailing: Icon(Icons.arrow_forward_ios, size: 18),
+                            ListTile(
+                              leading: const Icon(Icons.lock),
+                              title: const Text('退出', style: TextStyle(fontSize: 14)),
+                              trailing: const Icon(Icons.arrow_forward_ios, size: 18),
+                              onTap: () {
+                                //
+                              },
                             ),
                           ],
                         ),
