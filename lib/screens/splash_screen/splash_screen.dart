@@ -1,11 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:temple_dev/constants.dart';
 import 'package:temple_dev/screens/main/main.dart';
 
 class SplashScreen extends StatefulWidget {
-  static String routeName = "/splash";
+  static String routeName = "/";
 
   const SplashScreen({super.key});
 
@@ -25,11 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(const Duration(seconds: 2), () {
       // Navigate to your app's home page after 3 seconds
-      Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const MainScreen(),
-          ));
+      context.pushReplacementNamed(MainScreen.routeName);
     });
   }
 

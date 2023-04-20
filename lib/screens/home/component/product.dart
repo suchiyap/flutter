@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:temple_dev/screens/product_details/product_details.dart';
 import 'package:temple_dev/size_config.dart';
 
@@ -51,8 +52,7 @@ class _ProductState extends State<Product> {
     final List<Widget> productListing = products
         .map((prd) => Stack(children: [
               GestureDetector(
-                  onTap: () =>
-                      {Navigator.pushNamed(context, ProductDetails.routeName)},
+                  onTap: () => {context.pushNamed(ProductDetails.routeName)},
                   child: Container(
                       padding: const EdgeInsets.all(8),
                       decoration: const BoxDecoration(

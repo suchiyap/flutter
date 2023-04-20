@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:temple_dev/constants.dart';
 import 'package:temple_dev/components/nav_bar.dart';
 import 'package:temple_dev/screens/cart/cart.dart';
@@ -47,14 +48,14 @@ class _MainScreenState extends State<MainScreen> {
               TextButton(
                 child: const Text('No', style: TextStyle(color: kSubTextColor)),
                 onPressed: () {
-                  Navigator.of(context).pop(false);
+                  context.pop(false);
                 },
               ),
               TextButton(
                 child:
                     const Text('Yes', style: TextStyle(color: kPrimaryColor)),
                 onPressed: () {
-                  Navigator.of(context).pop(true);
+                  context.pop(true);
                 },
               ),
             ],

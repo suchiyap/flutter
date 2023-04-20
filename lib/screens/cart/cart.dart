@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:temple_dev/constants.dart';
 import 'package:temple_dev/screens/cart/components/cart_list.dart';
+import 'package:temple_dev/screens/main/main.dart';
 
 class Cart extends StatefulWidget {
   static String routeName = "/cart";
@@ -80,7 +82,8 @@ class _CartState extends State<Cart> {
                         backgroundColor: kPrimaryBackgroundColor,
                         minimumSize:
                             Size(MediaQuery.of(context).size.width * 0.2, 50)),
-                    onPressed: () => {Navigator.pushNamed(context, '/')},
+                    onPressed: () =>
+                        {context.pushReplacementNamed(MainScreen.routeName)},
                     child: const Text(
                       '付款',
                       style: TextStyle(color: kPrimaryColor),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:temple_dev/constants.dart';
 import 'package:temple_dev/screens/cart/cart.dart';
 
@@ -24,7 +25,7 @@ class _CartNavState extends State<CartNav> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             GestureDetector(
-                onTap: () => Navigator.pushNamed(context, Cart.routeName),
+                onTap: () => context.pushNamed(Cart.routeName),
                 child: Stack(children: [
                   SizedBox(
                     width: 60,

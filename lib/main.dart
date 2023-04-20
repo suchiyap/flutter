@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import './screens/splash_screen/splash_screen.dart';
+import 'package:temple_dev/routes.dart';
 import 'theme.dart';
-import 'routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,12 +12,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Temple Demo',
       theme: theme(),
-      initialRoute: SplashScreen.routeName,
-      routes: routes,
       debugShowCheckedModeBanner: false,
+      routeInformationParser: AppRouter().router.routeInformationParser,
+      routerDelegate: AppRouter().router.routerDelegate,
     );
   }
 }

@@ -1,16 +1,39 @@
-import 'package:flutter/widgets.dart';
+import 'package:go_router/go_router.dart';
+
 import 'package:temple_dev/screens/cart/cart.dart';
 import 'package:temple_dev/screens/main/main.dart';
 import 'package:temple_dev/screens/product_details/product_details.dart';
 import 'package:temple_dev/screens/splash_screen/splash_screen.dart';
 import 'package:temple_dev/screens/profile/profile.dart';
 
-// We use name route
-// All our routes will be available here
-final Map<String, WidgetBuilder> routes = {
-  SplashScreen.routeName: (context) => const SplashScreen(),
-  MainScreen.routeName: (context) => const MainScreen(),
-  ProductDetails.routeName: (context) => const ProductDetails(),
-  Cart.routeName: (context) => const Cart(),
-  Profile.routeName: (context) => const Profile(),
-};
+class AppRouter {
+  GoRouter router = GoRouter(
+    routes: [
+      GoRoute(
+        name: Cart.routeName,
+        path: Cart.routeName,
+        builder: (context, state) => const Cart(),
+      ),
+      GoRoute(
+        name: MainScreen.routeName,
+        path: MainScreen.routeName,
+        builder: (context, state) => const MainScreen(),
+      ),
+      GoRoute(
+        name: ProductDetails.routeName,
+        path: ProductDetails.routeName,
+        builder: (context, state) => const ProductDetails(),
+      ),
+      GoRoute(
+        name: SplashScreen.routeName,
+        path: SplashScreen.routeName,
+        builder: (context, state) => const SplashScreen(),
+      ),
+      GoRoute(
+        name: Profile.routeName,
+        path: Profile.routeName,
+        builder: (context, state) => const Profile(),
+      ),
+    ],
+  );
+}
