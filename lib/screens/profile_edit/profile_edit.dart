@@ -390,6 +390,10 @@ class _ProfileEditState extends State<ProfileEdit> {
                                 ),
                                 onPressed: () {
                                   // TODO: Save changes
+                                  const snackBar = SnackBar(
+                                    content: Text('update successful'));
+                                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                                  Navigator.pop(context, true);
                                 },
                                 child: const Text('保存资料'),
                               ),
