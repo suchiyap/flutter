@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:temple_dev/constants.dart';
 import 'package:intl/intl.dart';
 
+import 'profile_top.dart';
+import 'profile_pic.dart';
+
 class ProfileEdit extends StatefulWidget {
   static String routeName = "/profile-edit-page";
   const ProfileEdit({super.key});
@@ -53,6 +56,7 @@ class _ProfileEditState extends State<ProfileEdit> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const ProfileTop(),
       body: SingleChildScrollView(
         child: Container(
           color: kPrimaryColor,
@@ -64,39 +68,22 @@ class _ProfileEditState extends State<ProfileEdit> {
                   color: kPrimaryColor,
                   child: Column(
                     children: [
-                      const SizedBox(height: 10),
-                      const Text(
-                        '修改个人资料',
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: kRatingBarColor,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(height: 10),
+                      // const SizedBox(height: 10),
+                      // const Text(
+                      //   '修改个人资料',
+                      //   style: TextStyle(
+                      //     fontSize: 18,
+                      //     color: kRatingBarColor,
+                      //     fontWeight: FontWeight.bold,
+                      //   ),
+                      // ),
+                      // const SizedBox(height: 10),
                       // const CircleAvatar(
                       //   radius: 50,
                       //   // backgroundImage: NetworkImage('https://google.com'), // for dynamic from backend
                       //   backgroundImage: AssetImage('assets/images/profile/avatar.jpeg'),
                       // ),
-                      Container(
-                        height: 70.0,
-                        width: 70.0,
-                        decoration: BoxDecoration(
-                          image: const DecorationImage(
-                            // image: NetworkImage('https://google.com'), // for dynamic from backend
-                            image: AssetImage('assets/images/profile/avatar.jpeg'),
-                            fit: BoxFit.cover
-                          ),
-                          border: Border.all(
-                            color: kPrimaryBackgroundColor,
-                            width: 8,
-                          ),
-                          // borderRadius: BorderRadius.circular(12),
-                          shape: BoxShape.circle,
-                          color: kPrimaryBackgroundColor,
-                        )
-                      ),
+                      const ProfilePic(),
                       const SizedBox(height: 20),
                       Container(
                         // height: 70.0,
@@ -130,7 +117,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                                       hintStyle: TextStyle(fontSize: 14, color: kSubTextColor),
                                       // border: const UnderlineInputBorder(),
                                       enabledBorder: UnderlineInputBorder(      
-                                        borderSide: BorderSide(),   
+                                        borderSide: BorderSide(),
                                       ),
                                       focusedBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(),
@@ -153,7 +140,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                                       hintStyle: TextStyle(fontSize: 14, color: kSubTextColor),
                                       // border: const UnderlineInputBorder(),
                                       enabledBorder: UnderlineInputBorder(      
-                                        borderSide: BorderSide(),   
+                                        borderSide: BorderSide(),
                                       ),
                                       focusedBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(),
@@ -161,35 +148,35 @@ class _ProfileEditState extends State<ProfileEdit> {
                                     ),
                                   ),
                                   const SizedBox(height: 10),
-                                  const Align(
-                                    alignment: Alignment.centerLeft, 
-                                    child: Text(
-                                      '手机号码',
-                                      style: TextStyle(fontSize: 16, color: kSubTextColor),
-                                    ),
-                                  ),
-                                  TextFormField(
-                                    controller: _mobileNoController,
-                                    decoration: const InputDecoration(
-                                      contentPadding: EdgeInsets.fromLTRB(8, 10, 0, 0),
-                                      hintText: '输入您的手机号码',
-                                      hintStyle: TextStyle(fontSize: 14, color: kSubTextColor),
-                                      // border: const UnderlineInputBorder(),
-                                      enabledBorder: UnderlineInputBorder(      
-                                        borderSide: BorderSide(),   
-                                      ),
-                                      focusedBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(),
-                                      ),
-                                    ),
-                                  ),
-                                  const SizedBox(height: 10),
+                                  // const Align(
+                                  //   alignment: Alignment.centerLeft, 
+                                  //   child: Text(
+                                  //     '手机号码',
+                                  //     style: TextStyle(fontSize: 16, color: kSubTextColor),
+                                  //   ),
+                                  // ),
+                                  // TextFormField(
+                                  //   controller: _mobileNoController,
+                                  //   decoration: const InputDecoration(
+                                  //     contentPadding: EdgeInsets.fromLTRB(8, 10, 0, 0),
+                                  //     hintText: '输入您的手机号码',
+                                  //     hintStyle: TextStyle(fontSize: 14, color: kSubTextColor),
+                                  //     // border: const UnderlineInputBorder(),
+                                  //     enabledBorder: UnderlineInputBorder(      
+                                  //       borderSide: BorderSide(),
+                                  //     ),
+                                  //     focusedBorder: UnderlineInputBorder(
+                                  //       borderSide: BorderSide(),
+                                  //     ),
+                                  //   ),
+                                  // ),
+                                  // const SizedBox(height: 10),
                                   Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       const Text(
                                         '手机号码',
-                                        style: TextStyle(fontSize: 16),
+                                        style: TextStyle(fontSize: 16, color: kSubTextColor),
                                       ),
                                       const SizedBox(height: 8),
                                       InputDecorator(
@@ -197,7 +184,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                                           contentPadding: EdgeInsets.fromLTRB(8, 8, 0, 0),
                                           // border: UnderlineInputBorder(),
                                           enabledBorder: UnderlineInputBorder(
-                                            borderSide: BorderSide(),   
+                                            borderSide: BorderSide(),
                                           ),
                                           focusedBorder: UnderlineInputBorder(
                                             borderSide: BorderSide(),
@@ -231,7 +218,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                                                   hintStyle: TextStyle(fontSize: 14, color: kSubTextColor),
                                                   // border: const UnderlineInputBorder(),
                                                   enabledBorder: UnderlineInputBorder(      
-                                                    borderSide: BorderSide(),   
+                                                    borderSide: BorderSide(),
                                                   ),
                                                   focusedBorder: UnderlineInputBorder(
                                                     borderSide: BorderSide(),
@@ -257,7 +244,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                                       contentPadding: EdgeInsets.fromLTRB(8, 10, 0, 0),
                                       // border: UnderlineInputBorder(),
                                       enabledBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(),   
+                                        borderSide: BorderSide(),
                                       ),
                                       focusedBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(),
@@ -300,7 +287,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                                       contentPadding: EdgeInsets.fromLTRB(8, 10, 0, 0),
                                       // border: UnderlineInputBorder(),
                                       enabledBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(),   
+                                        borderSide: BorderSide(),
                                       ),
                                       focusedBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(),
@@ -317,7 +304,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                                             contentPadding: EdgeInsets.fromLTRB(8, 10, 0, 0),
                                             // border: UnderlineInputBorder(),
                                             enabledBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(),   
+                                              borderSide: BorderSide(),
                                             ),
                                             focusedBorder: UnderlineInputBorder(
                                               borderSide: BorderSide(),
@@ -342,7 +329,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                                       contentPadding: EdgeInsets.fromLTRB(8, 10, 0, 0),
                                       // border: UnderlineInputBorder(),
                                       enabledBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(),   
+                                        borderSide: BorderSide(),
                                       ),
                                       focusedBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(),
