@@ -3,11 +3,12 @@ import 'package:temple_dev/routes.dart';
 import 'theme.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+  final _appRouter = AppRouter();
 
   // This widget is the root of your application.
   @override
@@ -16,8 +17,8 @@ class MyApp extends StatelessWidget {
       title: 'Temple Demo',
       theme: theme(),
       debugShowCheckedModeBanner: false,
-      routeInformationParser: AppRouter().router.routeInformationParser,
-      routerDelegate: AppRouter().router.routerDelegate,
+      routeInformationParser: _appRouter.router.routeInformationParser,
+      routerDelegate: _appRouter.router.routerDelegate,
     );
   }
 }
