@@ -226,8 +226,8 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                                     style: TextStyle(fontSize: 14)),
                                 trailing: const Icon(Icons.arrow_forward_ios,
                                     size: 18),
-                                onTap: () {
-                                  context.pushNamed(ProfileEdit.routeName);
+                                onTap: () => {
+                                  context.pushNamed(ProfileEdit.routeName)
                                 },
                               ),
                               const Divider(),
