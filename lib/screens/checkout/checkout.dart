@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:temple_dev/constants.dart';
+import 'package:temple_dev/screens/payment_success/payment_success.dart';
+import 'package:go_router/go_router.dart';
 
 class ProductList {
   String name;
@@ -279,7 +281,7 @@ class _CheckoutState extends State<Checkout> {
                         minimumSize:
                             Size(MediaQuery.of(context).size.width * 0.2, 50)),
                     onPressed: () =>
-                        {Navigator.pushNamed(context, Checkout.routeName)},
+                        {context.pushReplacement(PaymentSuccess.routeName)},
                     child: const Text(
                       '现在下单',
                       style: TextStyle(color: kPrimaryColor),

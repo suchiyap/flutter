@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:temple_dev/screens/cart/cart.dart';
 import 'package:temple_dev/screens/checkout/checkout.dart';
 import 'package:temple_dev/screens/main/main.dart';
+import 'package:temple_dev/screens/payment_success/payment_success.dart';
 import 'package:temple_dev/screens/product_details/product_details.dart';
 import 'package:temple_dev/screens/splash_screen/splash_screen.dart';
 import 'package:temple_dev/screens/profile/profile.dart';
@@ -45,6 +46,13 @@ class AppRouter {
         name: ProfileEdit.routeName,
         path: ProfileEdit.routeName,
         builder: (context, state) => const ProfileEdit(),
+      ),
+      GoRoute(
+        name: PaymentSuccess.routeName,
+        path: PaymentSuccess.routeName,
+        builder: (context, state) => const PaymentSuccess(
+          title: '支付成功',
+        ),
       ),
     ],
   );
