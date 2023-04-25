@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 
 import 'package:temple_dev/screens/cart/cart.dart';
+import 'package:temple_dev/screens/checkout/checkout.dart';
 import 'package:temple_dev/screens/main/main.dart';
 import 'package:temple_dev/screens/product_details/product_details.dart';
 import 'package:temple_dev/screens/splash_screen/splash_screen.dart';
@@ -13,6 +14,11 @@ class AppRouter {
         name: Cart.routeName,
         path: Cart.routeName,
         builder: (context, state) => const Cart(),
+      ),
+      GoRoute(
+        name: Checkout.routeName,
+        path: Checkout.routeName,
+        builder: (context, state) => const Checkout(),
       ),
       GoRoute(
         name: MainScreen.routeName,

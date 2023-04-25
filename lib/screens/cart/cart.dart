@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:temple_dev/constants.dart';
 import 'package:temple_dev/screens/cart/components/cart_list.dart';
-import 'package:temple_dev/screens/main/main.dart';
+import 'package:temple_dev/screens/checkout/checkout.dart';
 
 class Cart extends StatefulWidget {
   static String routeName = "/cart";
@@ -24,14 +24,23 @@ class _CartState extends State<Cart> {
             '购物车',
             style: titleStyle,
           )),
-      body: SizedBox(
-          width: double.infinity,
-          child: Column(
-            children: const [
-              CartListing(checked: false),
-              CartListing(checked: false),
-            ],
-          )),
+      body: CustomScrollView(slivers: <Widget>[
+        SliverList(
+            delegate: SliverChildListDelegate([
+          SizedBox(
+              width: double.infinity,
+              child: Column(
+                children: const [
+                  CartListing(checked: false),
+                  CartListing(checked: false),
+                  CartListing(checked: false),
+                  CartListing(checked: false),
+                  CartListing(checked: false),
+                  CartListing(checked: false),
+                ],
+              )),
+        ]))
+      ]),
       bottomNavigationBar: Container(
         width: double.infinity,
         decoration: const BoxDecoration(color: kPrimaryColor),
@@ -82,8 +91,7 @@ class _CartState extends State<Cart> {
                         backgroundColor: kPrimaryBackgroundColor,
                         minimumSize:
                             Size(MediaQuery.of(context).size.width * 0.2, 50)),
-                    onPressed: () =>
-                        {context.pushReplacementNamed(MainScreen.routeName)},
+                    onPressed: () => {context.pushNamed(Checkout.routeName)},
                     child: const Text(
                       '付款',
                       style: TextStyle(color: kPrimaryColor),
