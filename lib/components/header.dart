@@ -15,6 +15,7 @@ class _HeaderState extends State<Header> {
     return SliverAppBar(
       pinned: true,
       expandedHeight: 50,
+      automaticallyImplyLeading: false,
       flexibleSpace: Container(
         decoration: const BoxDecoration(
             // LinearGradient
