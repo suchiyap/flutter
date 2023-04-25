@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:temple_dev/constants.dart';
 import 'package:badges/badges.dart' as badge;
+import 'package:go_router/go_router.dart';
+import 'package:temple_dev/screens/profile_edit/profile_edit.dart';
 
 class Profile extends StatefulWidget {
   static String routeName = "/profile-page";
@@ -14,7 +16,7 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
   // bool _enableNotifications = true;
   String _selectedLanguage = 'English';
 
-  late TabController _tabController;
+  TabController ? _tabController;
   @override
   void initState() {
     super.initState();
@@ -225,7 +227,7 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                                 trailing: const Icon(Icons.arrow_forward_ios,
                                     size: 18),
                                 onTap: () {
-                                  //
+                                  context.pushNamed(ProfileEdit.routeName);
                                 },
                               ),
                               const Divider(),
@@ -363,11 +365,5 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
         ),
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    _tabController.dispose();
-    super.dispose();
   }
 }

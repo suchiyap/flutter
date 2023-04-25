@@ -6,6 +6,7 @@ import 'package:temple_dev/screens/main/main.dart';
 import 'package:temple_dev/screens/product_details/product_details.dart';
 import 'package:temple_dev/screens/splash_screen/splash_screen.dart';
 import 'package:temple_dev/screens/profile/profile.dart';
+import 'package:temple_dev/screens/profile_edit/profile_edit.dart';
 
 class AppRouter {
   GoRouter router = GoRouter(
@@ -39,6 +40,11 @@ class AppRouter {
         name: Profile.routeName,
         path: Profile.routeName,
         builder: (context, state) => const Profile(),
+      ),
+      GoRoute(
+        name: ProfileEdit.routeName,
+        path: ProfileEdit.routeName,
+        builder: (context, state) => const ProfileEdit(),
       ),
     ],
   );
