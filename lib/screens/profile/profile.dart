@@ -3,6 +3,7 @@ import 'package:temple_dev/constants.dart';
 import 'package:badges/badges.dart' as badge;
 import 'package:go_router/go_router.dart';
 import 'package:temple_dev/screens/profile_edit/profile_edit.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Profile extends StatefulWidget {
   static String routeName = "/profile-page";
@@ -16,7 +17,7 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
   // bool _enableNotifications = true;
   String _selectedLanguage = 'English';
 
-  TabController ? _tabController;
+  TabController? _tabController;
   @override
   void initState() {
     super.initState();
@@ -221,18 +222,19 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                           child: Column(
                             children: [
                               ListTile(
-                                leading: const Icon(Icons.person),
+                                leading: SvgPicture.asset(
+                                    'assets/icons/Useredit.svg'),
                                 title: const Text('个人资料',
                                     style: TextStyle(fontSize: 14)),
                                 trailing: const Icon(Icons.arrow_forward_ios,
                                     size: 18),
-                                onTap: () => {
-                                  context.pushNamed(ProfileEdit.routeName)
-                                },
+                                onTap: () =>
+                                    {context.pushNamed(ProfileEdit.routeName)},
                               ),
                               const Divider(),
                               ListTile(
-                                leading: const Icon(Icons.lock),
+                                leading: SvgPicture.asset(
+                                    'assets/icons/Location_Outline.svg'),
                                 title: const Text('收货地址',
                                     style: TextStyle(fontSize: 14)),
                                 trailing: const Icon(Icons.arrow_forward_ios,
@@ -243,7 +245,8 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                               ),
                               const Divider(),
                               ListTile(
-                                leading: const Icon(Icons.lock),
+                                leading: SvgPicture.asset(
+                                    'assets/icons/ChangePw.svg'),
                                 title: const Text('更换密码',
                                     style: TextStyle(fontSize: 14)),
                                 trailing: const Icon(Icons.arrow_forward_ios,
@@ -254,7 +257,8 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                               ),
                               const Divider(),
                               ListTile(
-                                leading: const Icon(Icons.lock),
+                                leading: SvgPicture.asset(
+                                    'assets/icons/Setting.svg'),
                                 title: const Text('设置',
                                     style: TextStyle(fontSize: 14)),
                                 trailing: const Icon(Icons.arrow_forward_ios,
@@ -265,7 +269,8 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                               ),
                               const Divider(),
                               ListTile(
-                                leading: const Icon(Icons.lock),
+                                leading:
+                                    SvgPicture.asset('assets/icons/Logout.svg'),
                                 title: const Text('退出',
                                     style: TextStyle(fontSize: 14)),
                                 trailing: const Icon(Icons.arrow_forward_ios,
@@ -298,29 +303,32 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                         // ),
                         Card(
                           child: Column(
-                            children: const [
+                            children: [
                               ListTile(
-                                leading: Icon(Icons.notifications),
-                                title: Text('更换语言',
+                                leading: SvgPicture.asset(
+                                    'assets/icons/Language.svg'),
+                                title: const Text('更换语言',
                                     style: TextStyle(fontSize: 14)),
-                                trailing:
-                                    Icon(Icons.arrow_forward_ios, size: 18),
+                                trailing: const Icon(Icons.arrow_forward_ios,
+                                    size: 18),
                               ),
-                              Divider(),
+                              const Divider(),
                               ListTile(
-                                leading: Icon(Icons.notifications),
-                                title: Text('帮助与反应',
+                                leading: SvgPicture.asset(
+                                    'assets/icons/Musicplay.svg'),
+                                title: const Text('帮助与反应',
                                     style: TextStyle(fontSize: 14)),
-                                trailing:
-                                    Icon(Icons.arrow_forward_ios, size: 18),
+                                trailing: const Icon(Icons.arrow_forward_ios,
+                                    size: 18),
                               ),
-                              Divider(),
+                              const Divider(),
                               ListTile(
-                                leading: Icon(Icons.notifications),
-                                title: Text('关于我们',
+                                leading: SvgPicture.asset(
+                                    'assets/icons/Infocircle.svg'),
+                                title: const Text('关于我们',
                                     style: TextStyle(fontSize: 14)),
-                                trailing:
-                                    Icon(Icons.arrow_forward_ios, size: 18),
+                                trailing: const Icon(Icons.arrow_forward_ios,
+                                    size: 18),
                               ),
                             ],
                           ),
