@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:temple_dev/constants.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:temple_dev/screens/product_details/product_details.dart';
 
 class ProductContent extends StatefulWidget {
   const ProductContent({super.key});
@@ -102,7 +103,8 @@ class _ProductContentState extends State<ProductContent> {
                                                     MaterialTapTargetSize
                                                         .shrinkWrap),
                                             onPressed: () {
-                                              Share.share("https://google.com");
+                                              Share.share(kWebProtocolDomain +
+                                                  ProductDetails.routeName);
                                             },
                                             child: SvgPicture.asset(
                                                 'assets/icons/Share.svg'),

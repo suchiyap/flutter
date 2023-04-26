@@ -1,8 +1,10 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:temple_dev/constants.dart';
 import 'package:temple_dev/screens/payment_success/payment_success.dart';
 import 'package:go_router/go_router.dart';
+import 'package:temple_dev/size_config.dart';
 
 class ProductList {
   String name;
@@ -73,13 +75,22 @@ class _CheckoutState extends State<Checkout> {
                     return Row(
                       children: [
                         SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.25,
+                          width: (kIsWeb
+                                  ? kWebWidth
+                                  : MediaQuery.of(context).size.width) *
+                              0.25,
                           child: Image.asset(products[index].image),
                         ),
                         Container(
                           padding: const EdgeInsets.only(left: 10),
-                          width: MediaQuery.of(context).size.width * 0.69,
-                          height: MediaQuery.of(context).size.width * 0.25,
+                          width: (kIsWeb
+                                  ? kWebWidth
+                                  : MediaQuery.of(context).size.width) *
+                              0.69,
+                          height: (kIsWeb
+                                  ? kWebWidth
+                                  : MediaQuery.of(context).size.width) *
+                              0.25,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -123,7 +134,7 @@ class _CheckoutState extends State<Checkout> {
                 )),
               ])),
           Container(
-            width: MediaQuery.of(context).size.width,
+            width: (kIsWeb ? kWebWidth : MediaQuery.of(context).size.width),
             margin: const EdgeInsets.only(top: 10),
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(10)),
@@ -163,7 +174,7 @@ class _CheckoutState extends State<Checkout> {
             ),
           ),
           Container(
-            width: MediaQuery.of(context).size.width,
+            width: (kIsWeb ? kWebWidth : MediaQuery.of(context).size.width),
             margin: const EdgeInsets.only(top: 10),
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(10)),
@@ -187,7 +198,7 @@ class _CheckoutState extends State<Checkout> {
                 ]),
           ),
           Container(
-              width: MediaQuery.of(context).size.width,
+              width: (kIsWeb ? kWebWidth : MediaQuery.of(context).size.width),
               margin: const EdgeInsets.only(top: 10),
               decoration: BoxDecoration(
                   color: Colors.white, borderRadius: BorderRadius.circular(10)),
@@ -278,8 +289,12 @@ class _CheckoutState extends State<Checkout> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                         backgroundColor: kPrimaryBackgroundColor,
-                        minimumSize:
-                            Size(MediaQuery.of(context).size.width * 0.2, 50)),
+                        minimumSize: Size(
+                            (kIsWeb
+                                    ? kWebWidth
+                                    : MediaQuery.of(context).size.width) *
+                                0.2,
+                            50)),
                     onPressed: () =>
                         {context.pushReplacement(PaymentSuccess.routeName)},
                     child: const Text(

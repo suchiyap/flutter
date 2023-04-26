@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+const kWebWidth = 480.00;
+
 class SizeConfig {
   static MediaQueryData? _mediaQueryData;
   static double? screenWidth;
