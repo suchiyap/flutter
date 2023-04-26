@@ -138,7 +138,10 @@ class _PaymentSuccessState extends State<PaymentSuccess> {
                     children: [
                       Image.asset(
                         'assets/images/success.png',
-                        width: MediaQuery.of(context).size.width / 2,
+                        width: (kIsWeb
+                                ? kWebWidth
+                                : MediaQuery.of(context).size.width) /
+                            2,
                       ),
                       const Text(
                         '支付成功啦！！！',
