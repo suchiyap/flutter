@@ -8,6 +8,7 @@ import 'package:temple_dev/screens/product_details/product_details.dart';
 import 'package:temple_dev/screens/splash_screen/splash_screen.dart';
 import 'package:temple_dev/screens/profile/profile.dart';
 import 'package:temple_dev/screens/profile_edit/profile_edit.dart';
+import 'package:temple_dev/screens/password/password_edit.dart';
 
 class AppRouter {
   GoRouter router = GoRouter(
@@ -53,6 +54,11 @@ class AppRouter {
         builder: (context, state) => const PaymentSuccess(
           title: '支付成功',
         ),
+      ),
+      GoRoute(
+        name: PasswordEdit.routeName,
+        path: PasswordEdit.routeName,
+        builder: (context, state) => const PasswordEdit(),
       ),
     ],
   );

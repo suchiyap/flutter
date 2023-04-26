@@ -3,6 +3,7 @@ import 'package:temple_dev/constants.dart';
 import 'package:badges/badges.dart' as badge;
 import 'package:go_router/go_router.dart';
 import 'package:temple_dev/screens/profile_edit/profile_edit.dart';
+import 'package:temple_dev/screens/password/password_edit.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Profile extends StatefulWidget {
@@ -228,8 +229,9 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                                     style: TextStyle(fontSize: 14)),
                                 trailing: const Icon(Icons.arrow_forward_ios,
                                     size: 18),
-                                onTap: () =>
-                                    {context.pushNamed(ProfileEdit.routeName)},
+                                onTap: () => {
+                                  context.pushNamed(ProfileEdit.routeName)
+                                },
                               ),
                               const Divider(),
                               ListTile(
@@ -251,8 +253,8 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                                     style: TextStyle(fontSize: 14)),
                                 trailing: const Icon(Icons.arrow_forward_ios,
                                     size: 18),
-                                onTap: () {
-                                  //
+                                onTap: () => {
+                                  context.pushNamed(PasswordEdit.routeName)
                                 },
                               ),
                               const Divider(),
