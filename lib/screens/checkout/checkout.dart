@@ -78,7 +78,7 @@ class _CheckoutState extends State<Checkout> {
                         ),
                         Container(
                           padding: const EdgeInsets.only(left: 10),
-                          width: MediaQuery.of(context).size.width * 0.7,
+                          width: MediaQuery.of(context).size.width * 0.69,
                           height: MediaQuery.of(context).size.width * 0.25,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
