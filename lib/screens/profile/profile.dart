@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:temple_dev/screens/address/my_address.dart';
 import 'package:temple_dev/screens/profile_edit/profile_edit.dart';
 import 'package:temple_dev/screens/password/password_edit.dart';
+import 'package:temple_dev/screens/language/language_edit.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Profile extends StatefulWidget {
@@ -313,6 +314,9 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                                     style: TextStyle(fontSize: 14)),
                                 trailing: const Icon(Icons.arrow_forward_ios,
                                     size: 18),
+                                onTap: () => {
+                                  context.pushNamed(LanguageEdit.routeName)
+                                },
                               ),
                               const Divider(),
                               ListTile(
