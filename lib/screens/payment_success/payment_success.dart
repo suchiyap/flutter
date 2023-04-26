@@ -1,8 +1,10 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:temple_dev/constants.dart';
 import 'dart:ui' as ui;
 import 'package:temple_dev/screens/main/main.dart';
+import 'package:temple_dev/size_config.dart';
 
 class PaymentSuccess extends StatefulWidget {
   static String routeName = "/payment-success";
@@ -93,7 +95,10 @@ class _PaymentSuccessState extends State<PaymentSuccess> {
                 children: [
                   Image.asset(
                     'assets/images/success.png',
-                    width: MediaQuery.of(context).size.width / 2,
+                    width: (kIsWeb
+                            ? kWebWidth
+                            : MediaQuery.of(context).size.width) /
+                        2,
                   ),
                   const Text(
                     '支付成功啦！！！',

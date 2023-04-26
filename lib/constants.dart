@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+var kWebDomain = 'temple.g2tex.cc';
+var kWebProtocolDomain = 'https://temple.g2tex.cc';
+
 const kPrimaryColor = Color(0xFFF90716);
 const kPrimaryLightColor = Color(0xFFFF5403);
 const kPrimaryGradientColor = LinearGradient(

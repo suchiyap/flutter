@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:temple_dev/components/add_minus_quantity.dart';
 import 'package:temple_dev/constants.dart';
+import 'package:temple_dev/size_config.dart';
 
 class CartListing extends StatefulWidget {
   const CartListing({super.key, required this.checked});
@@ -37,7 +39,8 @@ class _CartListingState extends State<CartListing> {
         child: Row(
           children: [
             Container(
-              width: MediaQuery.of(context).size.width * 0.25,
+              width: (kIsWeb ? kWebWidth : MediaQuery.of(context).size.width) *
+                  0.25,
               padding: const EdgeInsets.only(right: 5),
               child: Image.asset(
                 'assets/images/product/Product 1.png',

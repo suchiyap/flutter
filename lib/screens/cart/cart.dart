@@ -1,8 +1,10 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:temple_dev/constants.dart';
 import 'package:temple_dev/screens/cart/components/cart_list.dart';
 import 'package:temple_dev/screens/checkout/checkout.dart';
+import 'package:temple_dev/size_config.dart';
 
 class Cart extends StatefulWidget {
   static String routeName = "/cart";
@@ -89,8 +91,12 @@ class _CartState extends State<Cart> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                         backgroundColor: kPrimaryBackgroundColor,
-                        minimumSize:
-                            Size(MediaQuery.of(context).size.width * 0.2, 50)),
+                        minimumSize: Size(
+                            (kIsWeb
+                                    ? kWebWidth
+                                    : MediaQuery.of(context).size.width) *
+                                0.2,
+                            50)),
                     onPressed: () => {context.pushNamed(Checkout.routeName)},
                     child: const Text(
                       '付款',
