@@ -18,6 +18,9 @@ class _PasswordTopState extends State<PasswordTop> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      iconTheme: const IconThemeData(
+        color: kButtonTextColor,
+      ),
       toolbarHeight: 45,
       backgroundColor: kPrimaryColor,
       title: const Text(
