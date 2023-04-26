@@ -371,7 +371,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                                   ),
                                   onPressed: () {
                                     const snackBar = SnackBar(
-                                      content: Text('update successful'));
+                                      content: Text('修改成功'));
                                     ScaffoldMessenger.of(context).showSnackBar(snackBar);
                                     Navigator.pop(context, true);
                                   },
