@@ -1,4 +1,6 @@
 import 'package:go_router/go_router.dart';
+import 'package:temple_dev/screens/address/add_address.dart';
+import 'package:temple_dev/screens/address/my_address.dart';
 
 import 'package:temple_dev/screens/cart/cart.dart';
 import 'package:temple_dev/screens/checkout/checkout.dart';
@@ -22,6 +24,13 @@ class AppRouter {
         name: Checkout.routeName,
         path: Checkout.routeName,
         builder: (context, state) => const Checkout(),
+      ),
+      GoRoute(
+        name: PaymentSuccess.routeName,
+        path: PaymentSuccess.routeName,
+        builder: (context, state) => const PaymentSuccess(
+          title: '支付成功',
+        ),
       ),
       GoRoute(
         name: MainScreen.routeName,
@@ -49,11 +58,14 @@ class AppRouter {
         builder: (context, state) => const ProfileEdit(),
       ),
       GoRoute(
-        name: PaymentSuccess.routeName,
-        path: PaymentSuccess.routeName,
-        builder: (context, state) => const PaymentSuccess(
-          title: '支付成功',
-        ),
+        name: MyAddress.routeName,
+        path: MyAddress.routeName,
+        builder: (context, state) => const MyAddress(),
+      ),
+      GoRoute(
+        name: AddressForm.routeName,
+        path: AddressForm.routeName,
+        builder: (context, state) => const AddressForm(),
       ),
       GoRoute(
         name: PasswordEdit.routeName,
