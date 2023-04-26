@@ -213,16 +213,18 @@ class _ProfileEditState extends State<ProfileEdit> {
                                               child: TextFormField(
                                                 controller: _mobileNoController,
                                                 decoration: const InputDecoration(
-                                                  contentPadding: EdgeInsets.fromLTRB(8, 10, 0, 0),
+                                                  contentPadding: EdgeInsets.fromLTRB(8, 5, 0, 0),
                                                   hintText: '输入您的手机号码',
                                                   hintStyle: TextStyle(fontSize: 14, color: kSubTextColor),
                                                   // border: const UnderlineInputBorder(),
-                                                  enabledBorder: UnderlineInputBorder(      
-                                                    borderSide: BorderSide(),
-                                                  ),
-                                                  focusedBorder: UnderlineInputBorder(
-                                                    borderSide: BorderSide(),
-                                                  ),
+                                                  // enabledBorder: UnderlineInputBorder(
+                                                  //   borderSide: BorderSide(),
+                                                  // ),
+                                                  // focusedBorder: UnderlineInputBorder(
+                                                  //   borderSide: BorderSide(),
+                                                  // ),
+                                                  enabledBorder: InputBorder.none,
+                                                  focusedBorder: InputBorder.none,
                                                 ),
                                               ),
                                             ),
@@ -301,14 +303,16 @@ class _ProfileEditState extends State<ProfileEdit> {
                                         child: TextFormField(
                                           controller: _birthDateController,
                                           decoration: const InputDecoration(
-                                            contentPadding: EdgeInsets.fromLTRB(8, 10, 0, 0),
+                                            contentPadding: EdgeInsets.fromLTRB(0, 10, 0, 0),
                                             // border: UnderlineInputBorder(),
-                                            enabledBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(),
-                                            ),
-                                            focusedBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(),
-                                            ),
+                                            // enabledBorder: UnderlineInputBorder(
+                                            //   borderSide: BorderSide(),
+                                            // ),
+                                            // focusedBorder: UnderlineInputBorder(
+                                            //   borderSide: BorderSide(),
+                                            // ),
+                                            enabledBorder: InputBorder.none,
+                                            focusedBorder: InputBorder.none,
                                             hintText: '请选生日日期',
                                             suffixIcon: Icon(Icons.calendar_today),
                                           ),
