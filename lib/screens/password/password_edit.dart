@@ -49,24 +49,8 @@ class _PasswordEditState extends State<PasswordEdit> {
                     color: kPrimaryColor,
                     child: Column(
                       children: [
-                        // const SizedBox(height: 10),
-                        // const Text(
-                        //   '修改个人资料',
-                        //   style: TextStyle(
-                        //     fontSize: 18,
-                        //     color: kRatingBarColor,
-                        //     fontWeight: FontWeight.bold,
-                        //   ),
-                        // ),
-                        // const SizedBox(height: 10),
-                        // const CircleAvatar(
-                        //   radius: 50,
-                        //   // backgroundImage: NetworkImage('https://google.com'), // for dynamic from backend
-                        //   backgroundImage: AssetImage('assets/images/profile/avatar.jpeg'),
-                        // ),
                         const SizedBox(height: 20),
                         Container(
-                          // height: 70.0,
                           decoration: const BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.only(
@@ -96,7 +80,6 @@ class _PasswordEditState extends State<PasswordEdit> {
                                         contentPadding: const EdgeInsets.fromLTRB(8, 10, 0, 0),
                                         hintText: '请输入您的旧密码',
                                         hintStyle: const TextStyle(fontSize: 14, color: kSubTextColor),
-                                        // border: const UnderlineInputBorder(),
                                         enabledBorder: const UnderlineInputBorder(      
                                           borderSide: BorderSide(),
                                         ),
@@ -105,14 +88,12 @@ class _PasswordEditState extends State<PasswordEdit> {
                                         ),
                                         suffixIcon: IconButton(
                                           icon: Icon(
-                                            // Based on passwordVisible state choose the icon
                                             _oldPasswordVisible
                                             ? Icons.visibility
                                             : Icons.visibility_off,
                                             color: kTextColor,
                                           ),
                                           onPressed: () {
-                                            // Update the state i.e. toogle the state of passwordVisible variable
                                             setState(() {
                                                 _oldPasswordVisible = !_oldPasswordVisible;
                                             });
@@ -135,7 +116,6 @@ class _PasswordEditState extends State<PasswordEdit> {
                                         contentPadding: const EdgeInsets.fromLTRB(8, 10, 0, 0),
                                         hintText: '请输入不少与6位数子或字母的密码',
                                         hintStyle: const TextStyle(fontSize: 14, color: kSubTextColor),
-                                        // border: const UnderlineInputBorder(),
                                         enabledBorder: const UnderlineInputBorder(      
                                           borderSide: BorderSide(),
                                         ),
@@ -144,14 +124,12 @@ class _PasswordEditState extends State<PasswordEdit> {
                                         ),
                                         suffixIcon: IconButton(
                                           icon: Icon(
-                                            // Based on passwordVisible state choose the icon
                                             _newPasswordVisible
                                             ? Icons.visibility
                                             : Icons.visibility_off,
                                             color: kTextColor,
                                           ),
                                           onPressed: () {
-                                            // Update the state i.e. toogle the state of passwordVisible variable
                                             setState(() {
                                                 _newPasswordVisible = !_newPasswordVisible;
                                             });
@@ -174,7 +152,6 @@ class _PasswordEditState extends State<PasswordEdit> {
                                         contentPadding: const EdgeInsets.fromLTRB(8, 10, 0, 0),
                                         hintText: '请再次输入新密码',
                                         hintStyle: const TextStyle(fontSize: 14, color: kSubTextColor),
-                                        // border: const UnderlineInputBorder(),
                                         enabledBorder: const UnderlineInputBorder(      
                                           borderSide: BorderSide(),
                                         ),
@@ -183,14 +160,12 @@ class _PasswordEditState extends State<PasswordEdit> {
                                         ),
                                         suffixIcon: IconButton(
                                           icon: Icon(
-                                            // Based on passwordVisible state choose the icon
                                             _retypeNewPasswordVisible
                                             ? Icons.visibility
                                             : Icons.visibility_off,
                                             color: kTextColor,
                                           ),
                                           onPressed: () {
-                                            // Update the state i.e. toogle the state of passwordVisible variable
                                             setState(() {
                                                 _retypeNewPasswordVisible = !_retypeNewPasswordVisible;
                                             });
@@ -207,7 +182,6 @@ class _PasswordEditState extends State<PasswordEdit> {
                                 height: 50,
                                 child: ElevatedButton(
                                   style: ElevatedButton.styleFrom(
-                                    // minimumSize:,
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(30.0),
                                     ),
