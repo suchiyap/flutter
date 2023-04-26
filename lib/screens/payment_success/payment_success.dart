@@ -17,136 +17,182 @@ class _PaymentSuccessState extends State<PaymentSuccess> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // appBar: AppBar(
-        //     automaticallyImplyLeading: false,
-        //     title: Row(
-        //       crossAxisAlignment: CrossAxisAlignment.center,
-        //       mainAxisAlignment: MainAxisAlignment.center,
-        //       children: const [
-        //         Icon(
-        //           Icons.verified_outlined,
-        //           color: kRatingBarColor,
-        //         ),
-        //         Text('交易成功'),
-        //       ],
-        //     )),
-        body: CustomScrollView(slivers: <Widget>[
-      SliverAppBar(
-          automaticallyImplyLeading: false,
-          pinned: true,
-          expandedHeight: 170,
-          flexibleSpace: CustomPaint(
-            size: Size(
-                double.infinity,
-                (double.infinity * 0.5651162790697675)
-                    .toDouble()), //You can Replace [WIDTH] with your desired width for Custom Paint and height will be calculated automatically
-            painter: RPSCustomPainter(),
-          ),
-          // title of appbar
-          title: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                      padding: const EdgeInsets.only(right: 10),
-                      child: const Icon(
-                        Icons.verified_outlined,
-                        color: kRatingBarColor,
-                        size: 34,
-                      )),
-                  Text(
-                    widget.title,
-                    style: const TextStyle(
-                        fontSize: 26,
-                        color: kRatingBarColor,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    '实付',
-                    style: TextStyle(fontSize: 20, color: kRatingBarColor),
-                  ),
-                  Text(
-                    'RM3,349.00',
-                    style: TextStyle(fontSize: 20, color: kRatingBarColor),
-                  )
-                ],
-              )
-            ],
-          )),
-      SliverList(
-        delegate: SliverChildListDelegate(
-          [
-            Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    'assets/images/success.png',
-                    width: MediaQuery.of(context).size.width / 2,
-                  ),
-                  const Text(
-                    '支付成功啦！！！',
-                    style: TextStyle(
-                        fontSize: 26,
-                        color: kRatingBarColor,
-                        fontWeight: FontWeight.bold),
-                  )
-                ],
-              ),
-            ),
-            Container(
-              padding: const EdgeInsets.only(top: 30),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  ElevatedButton(
-                    onPressed: () => {},
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                      backgroundColor: kPrimaryBackgroundColor,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 30, vertical: 10),
+        appBar: PreferredSize(
+            preferredSize: const Size.fromHeight(170.0),
+            child: AppBar(
+                automaticallyImplyLeading: false,
+                // pinned: true,
+                // expandedHeight: 170,
+                centerTitle: true,
+                toolbarHeight: 80,
+                flexibleSpace: CustomPaint(
+                  size: Size(
+                      double.infinity,
+                      (double.infinity * 0.5651162790697675)
+                          .toDouble()), //You can Replace [WIDTH] with your desired width for Custom Paint and height will be calculated automatically
+                  painter: RPSCustomPainter(),
+                ),
+                // title of appbar
+                title: Column(
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                            padding: const EdgeInsets.only(right: 10),
+                            child: const Icon(
+                              Icons.verified_outlined,
+                              color: kRatingBarColor,
+                              size: 34,
+                            )),
+                        Text(
+                          widget.title,
+                          style: const TextStyle(
+                              fontSize: 26,
+                              color: kRatingBarColor,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
                     ),
-                    child: const Text('查看订单',
-                        style: TextStyle(color: kPrimaryColor, fontSize: 18)),
-                  ),
-                  ElevatedButton(
-                      onPressed: () =>
-                          {context.pushReplacementNamed(MainScreen.routeName)},
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)),
-                        backgroundColor: kPrimaryColor,
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 30, vertical: 10),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Text(
+                          '实付',
+                          style:
+                              TextStyle(fontSize: 20, color: kRatingBarColor),
+                        ),
+                        Text(
+                          'RM3,349.00',
+                          style:
+                              TextStyle(fontSize: 20, color: kRatingBarColor),
+                        )
+                      ],
+                    )
+                  ],
+                ))),
+        body: CustomScrollView(slivers: <Widget>[
+          // SliverAppBar(
+          //     automaticallyImplyLeading: false,
+          //     pinned: true,
+          //     expandedHeight: 170,
+          //     flexibleSpace: CustomPaint(
+          //       size: Size(
+          //           double.infinity,
+          //           (double.infinity * 0.5651162790697675)
+          //               .toDouble()), //You can Replace [WIDTH] with your desired width for Custom Paint and height will be calculated automatically
+          //       painter: RPSCustomPainter(),
+          //     ),
+          //     // title of appbar
+          //     title: Center(
+          //         child: Column(
+          //       mainAxisAlignment: MainAxisAlignment.end,
+          //       children: [
+          //         Row(
+          //           crossAxisAlignment: CrossAxisAlignment.end,
+          //           mainAxisAlignment: MainAxisAlignment.center,
+          //           children: [
+          //             Container(
+          //                 padding: const EdgeInsets.only(right: 10),
+          //                 child: const Icon(
+          //                   Icons.verified_outlined,
+          //                   color: kRatingBarColor,
+          //                   size: 34,
+          //                 )),
+          //             Text(
+          //               widget.title,
+          //               style: const TextStyle(
+          //                   fontSize: 26,
+          //                   color: kRatingBarColor,
+          //                   fontWeight: FontWeight.bold),
+          //             ),
+          //           ],
+          //         ),
+          //         Row(
+          //           crossAxisAlignment: CrossAxisAlignment.center,
+          //           mainAxisAlignment: MainAxisAlignment.center,
+          //           children: const [
+          //             Text(
+          //               '实付',
+          //               style: TextStyle(fontSize: 20, color: kRatingBarColor),
+          //             ),
+          //             Text(
+          //               'RM3,349.00',
+          //               style: TextStyle(fontSize: 20, color: kRatingBarColor),
+          //             )
+          //           ],
+          //         )
+          //       ],
+          //     ))),
+          SliverList(
+            delegate: SliverChildListDelegate(
+              [
+                Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/images/success.png',
+                        width: MediaQuery.of(context).size.width / 2,
                       ),
-                      child: const Text(
-                        '返回首页',
+                      const Text(
+                        '支付成功啦！！！',
                         style: TextStyle(
-                            color: kPrimaryBackgroundColor, fontSize: 18),
-                      ))
-                ],
-              ),
-            )
+                            fontSize: 26,
+                            color: kRatingBarColor,
+                            fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(top: 30),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                        onPressed: () => {},
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          backgroundColor: kPrimaryBackgroundColor,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 30, vertical: 10),
+                        ),
+                        child: const Text('查看订单',
+                            style:
+                                TextStyle(color: kPrimaryColor, fontSize: 18)),
+                      ),
+                      ElevatedButton(
+                          onPressed: () => {
+                                context
+                                    .pushReplacementNamed(MainScreen.routeName)
+                              },
+                          style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10)),
+                            backgroundColor: kPrimaryColor,
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 30, vertical: 10),
+                          ),
+                          child: const Text(
+                            '返回首页',
+                            style: TextStyle(
+                                color: kPrimaryBackgroundColor, fontSize: 18),
+                          ))
+                    ],
+                  ),
+                )
 
-            // Body Element
-          ],
-        ),
-      ),
-    ]));
+                // Body Element
+              ],
+            ),
+          ),
+        ]));
   }
 }
 
