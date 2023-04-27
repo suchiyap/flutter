@@ -43,6 +43,8 @@ dependencies:
   go_router: ^6.5.7
   intl: ^0.18.1
   image_picker: ^0.8.7+4
+  flutter_session_manager: ^1.0.3
+  shared_preferences: ^2.1.0
 
 dev_dependencies:
   flutter_test:
