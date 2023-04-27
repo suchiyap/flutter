@@ -308,7 +308,7 @@ class _AddressFormState extends State<AddressForm> {
                           backgroundColor: kPrimaryColor,
                           textStyle: const TextStyle(fontSize: 16)),
                       onPressed: () {
-                        const snackBar = SnackBar(content: Text('个人资料修改成功'));
+                        const snackBar = SnackBar(content: Text('地址添加成功'));
                         ScaffoldMessenger.of(context).showSnackBar(snackBar);
                         Navigator.pop(context, true);
                       },
