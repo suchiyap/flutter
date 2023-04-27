@@ -55,7 +55,7 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
   }
 
   checkIsLogin() async {
-    await sessionManager.set("isLoggedIn", false); // only for testing..set after login successful
+    await sessionManager.set("isLoggedIn", true); // only for testing..set after login successful
     return await sessionManager.get("isLoggedIn");
 
     // SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
