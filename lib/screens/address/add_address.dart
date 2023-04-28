@@ -1,7 +1,7 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:temple_dev/constants.dart';
+import 'package:go_router/go_router.dart';
+import 'package:temple_dev/screens/address/my_address_list.dart';
 
 class AddressForm extends StatefulWidget {
   static String routeName = '/address-form';
@@ -36,19 +36,6 @@ class _AddressFormState extends State<AddressForm> {
 
   @override
   Widget build(BuildContext context) {
-    Color getColor(Set<MaterialState> states) {
-      const Set<MaterialState> interactiveStates = <MaterialState>{
-        MaterialState.pressed,
-        MaterialState.hovered,
-        MaterialState.focused,
-        MaterialState.selected
-      };
-      if (states.any(interactiveStates.contains)) {
-        return kPrimaryColor;
-      }
-      return kTextColor;
-    }
-
     return Scaffold(
         appBar: AppBar(
             flexibleSpace: Container(
@@ -294,6 +281,47 @@ class _AddressFormState extends State<AddressForm> {
                     ))
                   ],
                 ),
+                const Divider(),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    '默认地址',
+                    style: TextStyle(fontSize: 16, color: kSubTextColor),
+                  ),
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                        child: CheckboxListTile(
+                      title: const Text("默认送货地址"),
+                      value: isChecked,
+                      activeColor: kPrimaryColor,
+                      onChanged: (newValue) {
+                        setState(() {
+                          isChecked = newValue!;
+                        });
+                      },
+                      controlAffinity: ListTileControlAffinity
+                          .leading, //  <-- leading Checkbox
+                    )),
+                    Expanded(
+                        child: CheckboxListTile(
+                      title: const Text("默认账单地址"),
+                      value: isChecked,
+                      activeColor: kPrimaryColor,
+                      onChanged: (newValue) {
+                        setState(() {
+                          isChecked = newValue!;
+                        });
+                      },
+                      controlAffinity: ListTileControlAffinity
+                          .leading, //  <-- leading Checkbox
+                    ))
+                  ],
+                ),
                 Center(
                   child: Container(
                     width: 200,
@@ -310,7 +338,8 @@ class _AddressFormState extends State<AddressForm> {
                       onPressed: () {
                         const snackBar = SnackBar(content: Text('地址添加成功'));
                         ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                        Navigator.pop(context, true);
+                        // Navigator.pop(context, true);
+                        context.pushNamed(AddressList.routeName);
                       },
                       child: const Text('保存'),
                     ),

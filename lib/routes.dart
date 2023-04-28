@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:temple_dev/screens/address/add_address.dart';
 import 'package:temple_dev/screens/address/my_address.dart';
+import 'package:temple_dev/screens/address/my_address_list.dart';
 
 import 'package:temple_dev/screens/cart/cart.dart';
 import 'package:temple_dev/screens/checkout/checkout.dart';
@@ -68,6 +69,11 @@ class AppRouter {
         name: AddressForm.routeName,
         path: AddressForm.routeName,
         builder: (context, state) => const AddressForm(),
+      ),
+      GoRoute(
+        name: AddressList.routeName,
+        path: AddressList.routeName,
+        builder: (context, state) => const AddressList(),
       ),
       GoRoute(
         name: PasswordEdit.routeName,
