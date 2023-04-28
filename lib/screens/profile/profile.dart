@@ -69,7 +69,10 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
 
   checkIsLogin() async {
     // await sessionManager.set("isLoggedIn", false); // only for testing..set after login successful
-    return await sessionManager.get("isLoggedIn");
+    if (await sessionManager.containsKey("isLoggedIn")) {
+      return await sessionManager.get("isLoggedIn");
+    }
+    return false;
 
     // SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     // if (sharedPreferences.containsKey('isLogin')) {
@@ -404,6 +407,8 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                               onTap: () => {
                                 context.pushNamed(LogIn.routeName).then((value) {
                                   if (value == true) {
+                                    var sessionManager = SessionManager();
+                                    sessionManager.set("isLoggedIn", true);
                                     setState(() {
                                       loggedIn = true;
                                     });

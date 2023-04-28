@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:temple_dev/constants.dart';
-import 'package:flutter_session_manager/flutter_session_manager.dart';
 
 import 'login_top.dart';
 
@@ -115,8 +114,6 @@ class _LogInState extends State<LogIn> {
                             textStyle: const TextStyle(fontSize: 16)
                           ),
                           onPressed: () {
-                            var sessionManager = SessionManager();
-                            sessionManager.set("isLoggedIn", true);
                             const snackBar = SnackBar(
                               content: Text('登入成功'));
                             ScaffoldMessenger.of(context).showSnackBar(snackBar);
