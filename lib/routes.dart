@@ -12,6 +12,7 @@ import 'package:temple_dev/screens/profile/profile.dart';
 import 'package:temple_dev/screens/profile_edit/profile_edit.dart';
 import 'package:temple_dev/screens/password/password_edit.dart';
 import 'package:temple_dev/screens/language/language_edit.dart';
+import 'package:temple_dev/screens/login/login.dart';
 
 class AppRouter {
   GoRouter router = GoRouter(
@@ -77,6 +78,11 @@ class AppRouter {
         name: LanguageEdit.routeName,
         path: LanguageEdit.routeName,
         builder: (context, state) => const LanguageEdit(),
+      ),
+      GoRoute(
+        name: LogIn.routeName,
+        path: LogIn.routeName,
+        builder: (context, state) => const LogIn(),
       ),
     ],
   );

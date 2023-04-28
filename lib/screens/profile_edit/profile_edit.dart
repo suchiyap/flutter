@@ -120,7 +120,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                                         hintText: '输入您的姓名',
                                         hintStyle: TextStyle(fontSize: 14, color: kSubTextColor),
                                         // border: const UnderlineInputBorder(),
-                                        enabledBorder: UnderlineInputBorder(      
+                                        enabledBorder: UnderlineInputBorder(
                                           borderSide: BorderSide(),
                                         ),
                                         focusedBorder: UnderlineInputBorder(
@@ -143,7 +143,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                                         hintText: '输入您的电子邮件',
                                         hintStyle: TextStyle(fontSize: 14, color: kSubTextColor),
                                         // border: const UnderlineInputBorder(),
-                                        enabledBorder: UnderlineInputBorder(      
+                                        enabledBorder: UnderlineInputBorder(
                                           borderSide: BorderSide(),
                                         ),
                                         focusedBorder: UnderlineInputBorder(
@@ -166,7 +166,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                                     //     hintText: '输入您的手机号码',
                                     //     hintStyle: TextStyle(fontSize: 14, color: kSubTextColor),
                                     //     // border: const UnderlineInputBorder(),
-                                    //     enabledBorder: UnderlineInputBorder(      
+                                    //     enabledBorder: UnderlineInputBorder(
                                     //       borderSide: BorderSide(),
                                     //     ),
                                     //     focusedBorder: UnderlineInputBorder(

@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:temple_dev/constants.dart';
 import 'package:badges/badges.dart' as badge;
 import 'package:go_router/go_router.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_session_manager/flutter_session_manager.dart';
+// import 'package:shared_preferences/shared_preferences.dart';
 import 'package:temple_dev/screens/address/my_address.dart';
 import 'package:temple_dev/screens/profile_edit/profile_edit.dart';
 import 'package:temple_dev/screens/password/password_edit.dart';
 import 'package:temple_dev/screens/language/language_edit.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_session_manager/flutter_session_manager.dart';
-// import 'package:shared_preferences/shared_preferences.dart';
+import 'package:temple_dev/screens/login/login.dart';
 
 class Profile extends StatefulWidget {
   static String routeName = "/profile-page";
@@ -22,8 +23,8 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
   // bool _enableNotifications = true;
   // String _selectedLanguage = 'English';
   bool loggedIn = false;
+  bool isLoading = true;
   var sessionManager = SessionManager();
-  bool isLoggedIn = false;
 
   TabController? _tabController;
   @override
@@ -34,6 +35,9 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
   }
 
   // void checkLogin() {
+  //   setState(() {
+  //     isLoading = true;
+  //   });
   //   checkIsLogin().then((isLogin) {
   //     if (isLogin) {
   //       setState(() {
@@ -42,9 +46,15 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
   //       sessionManager.set("isLoggedIn", true);
   //     }
   //   });
+  //   setState(() {
+  //     isLoading = false;
+  //   });
   // }
 
   void checkLogin() async {
+    setState(() {
+      isLoading = true;
+    });
     bool isLogin = await checkIsLogin();
     if (isLogin) {
       setState(() {
@@ -52,10 +62,13 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
       });
       sessionManager.set("isLoggedIn", true);
     }
+    setState(() {
+      isLoading = false;
+    });
   }
 
   checkIsLogin() async {
-    await sessionManager.set("isLoggedIn", true); // only for testing..set after login successful
+    // await sessionManager.set("isLoggedIn", false); // only for testing..set after login successful
     return await sessionManager.get("isLoggedIn");
 
     // SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
@@ -67,7 +80,9 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return (isLoading)
+      ? const SizedBox()
+      : Scaffold(
       body: SingleChildScrollView(
         child: Container(
           color: kPrimaryColor,
@@ -335,6 +350,9 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                               trailing: const Icon(Icons.arrow_forward_ios,
                                   size: 18),
                               onTap: () {
+                                const snackBar = SnackBar(
+                                      content: Text('退出成功'));
+                                ScaffoldMessenger.of(context).showSnackBar(snackBar);
                                 sessionManager.set("isLoggedIn", false);
                                 setState(() {
                                   loggedIn = false;
@@ -384,7 +402,13 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                               trailing: const Icon(Icons.arrow_forward_ios,
                                   size: 18),
                               onTap: () => {
-                                context.pushNamed(ProfileEdit.routeName)
+                                context.pushNamed(LogIn.routeName).then((value) {
+                                  if (value == true) {
+                                    setState(() {
+                                      loggedIn = true;
+                                    });
+                                  }
+                                }),
                               },
                             ), const Divider()
                           ]
