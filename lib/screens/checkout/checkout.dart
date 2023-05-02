@@ -64,7 +64,7 @@ class _CheckoutState extends State<Checkout> {
               decoration: BoxDecoration(
                   color: Colors.white, borderRadius: BorderRadius.circular(10)),
               padding: const EdgeInsets.all(10),
-              height: 400,
+              height: (products.length * 130),
               width: double.infinity,
               child: Column(children: [
                 Expanded(

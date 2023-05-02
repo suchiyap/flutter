@@ -34,11 +34,6 @@ class _CartState extends State<Cart> {
               child: Column(
                 children: const [
                   CartListing(checked: false),
-                  CartListing(checked: false),
-                  CartListing(checked: false),
-                  CartListing(checked: false),
-                  CartListing(checked: false),
-                  CartListing(checked: false),
                 ],
               )),
         ]))
