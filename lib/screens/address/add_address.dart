@@ -48,316 +48,319 @@ class _AddressFormState extends State<AddressForm> {
               style: TextStyle(
                   color: kRatingBarColor, fontWeight: FontWeight.bold),
             )),
-        body: Container(
-          padding: const EdgeInsets.all(20),
-          decoration: const BoxDecoration(
-              borderRadius: BorderRadius.horizontal(
-                  left: Radius.circular(20), right: Radius.circular(20)),
-              color: kPrimaryBackgroundColor),
-          child: Form(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                TextFormField(
-                  decoration: const InputDecoration(
-                    enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(),
-                    ),
-                    focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(),
-                    ),
-                    contentPadding: EdgeInsets.fromLTRB(0, 10, 0, 15),
-                    hintText: '黎玉兰',
-                    labelText: '收货人',
-                    labelStyle: TextStyle(fontSize: 20, color: kSubTextColor),
-                    hintStyle: TextStyle(fontSize: 14, color: kSubTextColor),
-                  ),
-                  validator: (String? value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter some text';
-                    }
-                    return null;
-                  },
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    InputDecorator(
-                      decoration: const InputDecoration(
-                        labelText: '联络号码',
-                        labelStyle:
-                            TextStyle(fontSize: 20, color: kSubTextColor),
-                        contentPadding: EdgeInsets.fromLTRB(0, 15, 0, 0),
-                        // border: UnderlineInputBorder(),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(),
-                        ),
-                        focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(),
-                        ),
+        body: SingleChildScrollView(
+          child: Container(
+            padding: const EdgeInsets.all(20),
+            decoration: const BoxDecoration(
+                borderRadius: BorderRadius.horizontal(
+                    left: Radius.circular(20), right: Radius.circular(20)),
+                color: kPrimaryBackgroundColor),
+            child: Form(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  TextFormField(
+                    decoration: const InputDecoration(
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(),
                       ),
-                      child: Row(
-                        children: [
-                          DropdownButtonHideUnderline(
-                            child: DropdownButton<String>(
-                              value: _selectedMobilePrefix,
-                              items: _mobilePrefixList.map((String prefix) {
-                                return DropdownMenuItem<String>(
-                                  value: prefix,
-                                  child: Text(prefix),
-                                );
-                              }).toList(),
-                              onChanged: (String? prefix) {
-                                setState(() {
-                                  _selectedMobilePrefix = prefix ?? '';
-                                });
-                              },
-                            ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(),
+                      ),
+                      contentPadding: EdgeInsets.fromLTRB(0, 10, 0, 15),
+                      hintText: '黎玉兰',
+                      labelText: '收货人',
+                      labelStyle: TextStyle(fontSize: 20, color: kSubTextColor),
+                      hintStyle: TextStyle(fontSize: 14, color: kSubTextColor),
+                    ),
+                    validator: (String? value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter some text';
+                      }
+                      return null;
+                    },
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      InputDecorator(
+                        decoration: const InputDecoration(
+                          labelText: '联络号码',
+                          labelStyle:
+                              TextStyle(fontSize: 20, color: kSubTextColor),
+                          contentPadding: EdgeInsets.fromLTRB(0, 15, 0, 0),
+                          // border: UnderlineInputBorder(),
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(),
                           ),
-                          const SizedBox(width: 8),
-                          Expanded(
-                            child: TextFormField(
-                              controller: _mobileNoController,
-                              decoration: const InputDecoration(
-                                contentPadding: EdgeInsets.fromLTRB(8, 5, 0, 0),
-                                hintText: '123456789',
-                                hintStyle: TextStyle(
-                                    fontSize: 14, color: kSubTextColor),
-                                enabledBorder: InputBorder.none,
-                                focusedBorder: InputBorder.none,
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(),
+                          ),
+                        ),
+                        child: Row(
+                          children: [
+                            DropdownButtonHideUnderline(
+                              child: DropdownButton<String>(
+                                value: _selectedMobilePrefix,
+                                items: _mobilePrefixList.map((String prefix) {
+                                  return DropdownMenuItem<String>(
+                                    value: prefix,
+                                    child: Text(prefix),
+                                  );
+                                }).toList(),
+                                onChanged: (String? prefix) {
+                                  setState(() {
+                                    _selectedMobilePrefix = prefix ?? '';
+                                  });
+                                },
                               ),
                             ),
-                          ),
-                        ],
+                            const SizedBox(width: 8),
+                            Expanded(
+                              child: TextFormField(
+                                controller: _mobileNoController,
+                                decoration: const InputDecoration(
+                                  contentPadding:
+                                      EdgeInsets.fromLTRB(8, 5, 0, 0),
+                                  hintText: '123456789',
+                                  hintStyle: TextStyle(
+                                      fontSize: 14, color: kSubTextColor),
+                                  enabledBorder: InputBorder.none,
+                                  focusedBorder: InputBorder.none,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  // Padding(
+                  //   padding: const EdgeInsets.symmetric(vertical: 16.0),
+                  //   child: ElevatedButton(
+                  //     onPressed: () {
+                  //       // Validate will return true if the form is valid, or false if
+                  //       // the form is invalid.
+                  //       if (_formKey.currentState!.validate()) {
+                  //         // Process data.
+                  //       }
+                  //     },
+                  //     child: const Text('Submit'),
+                  //   ),
+                  // ),
+                  TextFormField(
+                    decoration: const InputDecoration(
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(),
+                      ),
+                      contentPadding: EdgeInsets.fromLTRB(0, 20, 0, 15),
+                      hintText: '如门牌号，路名，单元号码',
+                      labelText: '详细地址',
+                      labelStyle: TextStyle(fontSize: 20, color: kSubTextColor),
+                      hintStyle: TextStyle(fontSize: 14, color: kSubTextColor),
+                    ),
+                    validator: (String? value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter some text';
+                      }
+                      return null;
+                    },
+                  ),
+                  TextFormField(
+                    decoration: const InputDecoration(
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(),
+                      ),
+                      contentPadding: EdgeInsets.fromLTRB(0, 20, 0, 15),
+                      hintText: '471092',
+                      labelText: '邮政编码',
+                      labelStyle: TextStyle(fontSize: 20, color: kSubTextColor),
+                      hintStyle: TextStyle(fontSize: 14, color: kSubTextColor),
+                    ),
+                    validator: (String? value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter some text';
+                      }
+                      return null;
+                    },
+                  ),
+                  TextFormField(
+                    decoration: const InputDecoration(
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(),
+                      ),
+                      contentPadding: EdgeInsets.fromLTRB(0, 20, 0, 15),
+                      hintText: 'Petaling Jaya',
+                      labelText: '城市',
+                      labelStyle: TextStyle(fontSize: 20, color: kSubTextColor),
+                      hintStyle: TextStyle(fontSize: 14, color: kSubTextColor),
+                    ),
+                    validator: (String? value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter some text';
+                      }
+                      return null;
+                    },
+                  ),
+                  InputDecorator(
+                    decoration: const InputDecoration(
+                      contentPadding: EdgeInsets.fromLTRB(0, 20, 0, 10),
+                      // border: UnderlineInputBorder(),
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(),
+                      ),
+                      labelText: '州属',
+                      labelStyle: TextStyle(fontSize: 20, color: kSubTextColor),
+                      hintText: '请选择',
+                      hintStyle: TextStyle(fontSize: 14, color: kSubTextColor),
+                    ),
+                    child: DropdownButtonHideUnderline(
+                      child: DropdownButton<String>(
+                        value: _selectedState,
+                        items: _stateList.map((value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList(),
+                        onChanged: (String? value) {
+                          setState(() {
+                            _selectedState = value ?? '';
+                          });
+                        },
                       ),
                     ),
-                  ],
-                ),
-                // Padding(
-                //   padding: const EdgeInsets.symmetric(vertical: 16.0),
-                //   child: ElevatedButton(
-                //     onPressed: () {
-                //       // Validate will return true if the form is valid, or false if
-                //       // the form is invalid.
-                //       if (_formKey.currentState!.validate()) {
-                //         // Process data.
-                //       }
-                //     },
-                //     child: const Text('Submit'),
-                //   ),
-                // ),
-                TextFormField(
-                  decoration: const InputDecoration(
-                    enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(),
-                    ),
-                    focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(),
-                    ),
-                    contentPadding: EdgeInsets.fromLTRB(0, 20, 0, 15),
-                    hintText: '如门牌号，路名，单元号码',
-                    labelText: '详细地址',
-                    labelStyle: TextStyle(fontSize: 20, color: kSubTextColor),
-                    hintStyle: TextStyle(fontSize: 14, color: kSubTextColor),
                   ),
-                  validator: (String? value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter some text';
-                    }
-                    return null;
-                  },
-                ),
-                TextFormField(
-                  decoration: const InputDecoration(
-                    enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(),
-                    ),
-                    focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(),
-                    ),
-                    contentPadding: EdgeInsets.fromLTRB(0, 20, 0, 15),
-                    hintText: '471092',
-                    labelText: '邮政编码',
-                    labelStyle: TextStyle(fontSize: 20, color: kSubTextColor),
-                    hintStyle: TextStyle(fontSize: 14, color: kSubTextColor),
+                  const SizedBox(
+                    height: 10,
                   ),
-                  validator: (String? value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter some text';
-                    }
-                    return null;
-                  },
-                ),
-                TextFormField(
-                  decoration: const InputDecoration(
-                    enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(),
-                    ),
-                    focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(),
-                    ),
-                    contentPadding: EdgeInsets.fromLTRB(0, 20, 0, 15),
-                    hintText: 'Petaling Jaya',
-                    labelText: '城市',
-                    labelStyle: TextStyle(fontSize: 20, color: kSubTextColor),
-                    hintStyle: TextStyle(fontSize: 14, color: kSubTextColor),
-                  ),
-                  validator: (String? value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter some text';
-                    }
-                    return null;
-                  },
-                ),
-                InputDecorator(
-                  decoration: const InputDecoration(
-                    contentPadding: EdgeInsets.fromLTRB(0, 20, 0, 10),
-                    // border: UnderlineInputBorder(),
-                    enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(),
-                    ),
-                    focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(),
-                    ),
-                    labelText: '州属',
-                    labelStyle: TextStyle(fontSize: 20, color: kSubTextColor),
-                    hintText: '请选择',
-                    hintStyle: TextStyle(fontSize: 14, color: kSubTextColor),
-                  ),
-                  child: DropdownButtonHideUnderline(
-                    child: DropdownButton<String>(
-                      value: _selectedState,
-                      items: _stateList.map((value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(value),
-                        );
-                      }).toList(),
-                      onChanged: (String? value) {
-                        setState(() {
-                          _selectedState = value ?? '';
-                        });
-                      },
+                  const Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      '标签为',
+                      style: TextStyle(fontSize: 16, color: kSubTextColor),
                     ),
                   ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                const Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    '标签为',
-                    style: TextStyle(fontSize: 16, color: kSubTextColor),
+                  Row(
+                    children: [
+                      Expanded(
+                          child: CheckboxListTile(
+                        title: const Text("住家"),
+                        value: isChecked,
+                        activeColor: kPrimaryColor,
+                        onChanged: (newValue) {
+                          setState(() {
+                            isChecked = newValue!;
+                          });
+                        },
+                        controlAffinity: ListTileControlAffinity
+                            .leading, //  <-- leading Checkbox
+                      )),
+                      Expanded(
+                          child: CheckboxListTile(
+                        title: const Text("公司"),
+                        value: isChecked,
+                        activeColor: kPrimaryColor,
+                        onChanged: (newValue) {
+                          setState(() {
+                            isChecked = newValue!;
+                          });
+                        },
+                        controlAffinity: ListTileControlAffinity
+                            .leading, //  <-- leading Checkbox
+                      ))
+                    ],
                   ),
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                        child: CheckboxListTile(
-                      title: const Text("住家"),
-                      value: isChecked,
-                      activeColor: kPrimaryColor,
-                      onChanged: (newValue) {
-                        setState(() {
-                          isChecked = newValue!;
-                        });
-                      },
-                      controlAffinity: ListTileControlAffinity
-                          .leading, //  <-- leading Checkbox
-                    )),
-                    Expanded(
-                        child: CheckboxListTile(
-                      title: const Text("公司"),
-                      value: isChecked,
-                      activeColor: kPrimaryColor,
-                      onChanged: (newValue) {
-                        setState(() {
-                          isChecked = newValue!;
-                        });
-                      },
-                      controlAffinity: ListTileControlAffinity
-                          .leading, //  <-- leading Checkbox
-                    ))
-                  ],
-                ),
-                const Divider(),
-                const SizedBox(
-                  height: 10,
-                ),
-                const Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    '默认地址',
-                    style: TextStyle(fontSize: 16, color: kSubTextColor),
+                  const Divider(),
+                  const SizedBox(
+                    height: 10,
                   ),
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                        child: CheckboxListTile(
-                      title: const Text("默认送货地址"),
-                      value: isChecked,
-                      activeColor: kPrimaryColor,
-                      onChanged: (newValue) {
-                        setState(() {
-                          isChecked = newValue!;
-                        });
-                      },
-                      controlAffinity: ListTileControlAffinity
-                          .leading, //  <-- leading Checkbox
-                    )),
-                    Expanded(
-                        child: CheckboxListTile(
-                      title: const Text("默认账单地址"),
-                      value: isChecked,
-                      activeColor: kPrimaryColor,
-                      onChanged: (newValue) {
-                        setState(() {
-                          isChecked = newValue!;
-                        });
-                      },
-                      controlAffinity: ListTileControlAffinity
-                          .leading, //  <-- leading Checkbox
-                    ))
-                  ],
-                ),
-                Center(
-                  child: Container(
-                    width: 200,
-                    height: 50,
-                    margin: const EdgeInsets.only(top: 20),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          // minimumSize:,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30.0),
-                          ),
-                          backgroundColor: kPrimaryColor,
-                          textStyle: const TextStyle(fontSize: 16)),
-                      onPressed: () {
-                        const snackBar = SnackBar(content: Text('地址添加成功'));
-                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                        // Navigator.pop(context, true);
-                        context.pushNamed(AddressList.routeName);
-                      },
-                      child: const Text('保存'),
+                  const Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      '默认地址',
+                      style: TextStyle(fontSize: 16, color: kSubTextColor),
                     ),
                   ),
-                )
+                  Row(
+                    children: [
+                      Expanded(
+                          child: CheckboxListTile(
+                        title: const Text("默认送货地址"),
+                        value: isChecked,
+                        activeColor: kPrimaryColor,
+                        onChanged: (newValue) {
+                          setState(() {
+                            isChecked = newValue!;
+                          });
+                        },
+                        controlAffinity: ListTileControlAffinity
+                            .leading, //  <-- leading Checkbox
+                      )),
+                      Expanded(
+                          child: CheckboxListTile(
+                        title: const Text("默认账单地址"),
+                        value: isChecked,
+                        activeColor: kPrimaryColor,
+                        onChanged: (newValue) {
+                          setState(() {
+                            isChecked = newValue!;
+                          });
+                        },
+                        controlAffinity: ListTileControlAffinity
+                            .leading, //  <-- leading Checkbox
+                      ))
+                    ],
+                  ),
+                  Center(
+                    child: Container(
+                      width: 200,
+                      height: 50,
+                      margin: const EdgeInsets.only(top: 20),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            // minimumSize:,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30.0),
+                            ),
+                            backgroundColor: kPrimaryColor,
+                            textStyle: const TextStyle(fontSize: 16)),
+                        onPressed: () {
+                          const snackBar = SnackBar(content: Text('地址添加成功'));
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                          // Navigator.pop(context, true);
+                          context.pushNamed(AddressList.routeName);
+                        },
+                        child: const Text('保存'),
+                      ),
+                    ),
+                  )
 
-                // Checkbox(
-                //   checkColor: Colors.white,
-                //   fillColor: MaterialStateProperty.resolveWith(getColor),
-                //   v
-                //   value: isChecked,
-                //   onChanged: (bool? value) {
-                //     setState(() {
-                //       isChecked = value!;
-                //     });
-                //   },
-                // )
-              ],
+                  // Checkbox(
+                  //   checkColor: Colors.white,
+                  //   fillColor: MaterialStateProperty.resolveWith(getColor),
+                  //   v
+                  //   value: isChecked,
+                  //   onChanged: (bool? value) {
+                  //     setState(() {
+                  //       isChecked = value!;
+                  //     });
+                  //   },
+                  // )
+                ],
+              ),
             ),
           ),
         ));
