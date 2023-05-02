@@ -43,7 +43,7 @@ class _PasswordEditState extends State<PasswordEdit> {
             color: kPrimaryColor,
             child: Column(
               children: [
-                const SizedBox(height: 20),
+                const SizedBox(height: 10),
                 Container(
                   decoration: const BoxDecoration(
                     color: Colors.white,

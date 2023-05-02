@@ -14,6 +14,7 @@ import 'package:temple_dev/screens/profile_edit/profile_edit.dart';
 import 'package:temple_dev/screens/password/password_edit.dart';
 import 'package:temple_dev/screens/language/language_edit.dart';
 import 'package:temple_dev/screens/login/login.dart';
+import 'package:temple_dev/screens/forgot_password/forgot_password.dart';
 
 class AppRouter {
   GoRouter router = GoRouter(
@@ -89,6 +90,11 @@ class AppRouter {
         name: LogIn.routeName,
         path: LogIn.routeName,
         builder: (context, state) => const LogIn(),
+      ),
+      GoRoute(
+        name: ForgotPassword.routeName,
+        path: ForgotPassword.routeName,
+        builder: (context, state) => const ForgotPassword(),
       ),
     ],
   );

@@ -1,29 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:temple_dev/constants.dart';
-import 'package:go_router/go_router.dart';
 
-import 'package:temple_dev/screens/forgot_password/forgot_password.dart';
-import 'login_top.dart';
+import 'forgot_password_top.dart';
 
-class LogIn extends StatefulWidget {
-  static String routeName = "/login-page";
-  const LogIn({super.key});
+class ForgotPassword extends StatefulWidget {
+  static String routeName = "/forgot-password-page";
+  const ForgotPassword({super.key});
 
   @override
-  State<LogIn> createState() => _LogInState();
+  State<ForgotPassword> createState() => _ForgotPasswordState();
 }
 
-class _LogInState extends State<LogIn> {
+class _ForgotPasswordState extends State<ForgotPassword> {
   TextEditingController? _emailController;
-  TextEditingController? _pwController;
-  late bool _passwordInvisible;
 
   @override
   void initState() {
     super.initState();
     _emailController = TextEditingController();
-    _pwController = TextEditingController();
-    _passwordInvisible = true;
   }
 
   @override
@@ -33,7 +27,7 @@ class _LogInState extends State<LogIn> {
         FocusManager.instance.primaryFocus?.unfocus();
       },
       child: Scaffold(
-        appBar: const LogInTop(),
+        appBar: const ForgotPasswordTop(),
         body: SingleChildScrollView(
           child: Container(
             color: kPrimaryColor,
@@ -77,52 +71,10 @@ class _LogInState extends State<LogIn> {
                                 ),
                               ),
                             ),
-                            const SizedBox(height: 10),
-                            const Align(
-                              alignment: Alignment.centerLeft, 
-                              child: Text(
-                                '密码',
-                                style: TextStyle(fontSize: 16, color: kSubTextColor),
-                              ),
-                            ),
-                            TextFormField(
-                              controller: _pwController,
-                              obscureText: _passwordInvisible,
-                              decoration: const InputDecoration(
-                                contentPadding: EdgeInsets.fromLTRB(8, 10, 0, 0),
-                                hintText: '请输入您的密码',
-                                hintStyle: TextStyle(fontSize: 14, color: kSubTextColor),
-                                enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(),
-                                ),
-                                focusedBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(),
-                                ),
-                              ),
-                            ),
                           ]
                         ),
                       ),
-                      // const SizedBox(height: 16),
-                      Container(
-                        padding: const EdgeInsets.only(right: 10),
-                        child: Align(
-                          alignment: Alignment.centerRight,
-                          child: TextButton(
-                            // style: TextButton.styleFrom(fixedSize: const Size.fromHeight(150)),
-                            onPressed: () => {
-                              context.pushNamed(ForgotPassword.routeName)
-                            },
-                            child: const Text('忘记密码',
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: kTextColor,
-                                backgroundColor: kButtonTextColor,
-                              )
-                            ),
-                          ),
-                        ),
-                      ),
+                      const SizedBox(height: 20),
                       SizedBox(
                         width: 200,
                         height: 50,
@@ -136,11 +88,11 @@ class _LogInState extends State<LogIn> {
                           ),
                           onPressed: () {
                             const snackBar = SnackBar(
-                              content: Text('登入成功'));
+                              content: Text('重置密码成功，请检查您的电子邮件以重设密码'));
                             ScaffoldMessenger.of(context).showSnackBar(snackBar);
                             Navigator.pop(context, true);
                           },
-                          child: const Text('登入'),
+                          child: const Text('重置密码'),
                         ),
                       ),
                       const SizedBox(height: 25),
