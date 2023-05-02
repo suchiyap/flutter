@@ -51,7 +51,8 @@ class _CartNavState extends State<CartNav> {
                       right: 0,
                       height: 22,
                       child: Container(
-                        padding: const EdgeInsets.all(2),
+                        padding:
+                            const EdgeInsets.only(bottom: 3, left: 2, right: 2),
                         constraints: const BoxConstraints(minWidth: 22),
                         decoration: BoxDecoration(
                             color: Colors.white,
@@ -61,7 +62,7 @@ class _CartNavState extends State<CartNav> {
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
-                            children: const [Center(child: Text('3'))]),
+                            children: const [Center(child: Text('13'))]),
                       ))
                 ])),
             Row(
