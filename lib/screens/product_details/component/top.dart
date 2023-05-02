@@ -12,7 +12,7 @@ class _ProductTopState extends State<ProductTop> {
   Widget build(BuildContext context) {
     return SliverAppBar(
       pinned: true,
-      expandedHeight: 400,
+      expandedHeight: 350,
       flexibleSpace: Container(
         decoration: const BoxDecoration(
             image: DecorationImage(
