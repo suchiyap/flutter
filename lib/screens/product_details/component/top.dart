@@ -17,7 +17,7 @@ class _ProductTopState extends State<ProductTop> {
         decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage('assets/images/product/Product 1.png'),
-                fit: BoxFit.fill)),
+                fit: BoxFit.cover)),
       ),
       // title of appbar
     );
